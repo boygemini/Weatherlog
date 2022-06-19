@@ -596,11 +596,11 @@ document.getElementById("see-all").addEventListener("click", (e) => {
 
 const cityImg = () => {
   let cityArr = [
-    "/IMAGES/amsterdam.jpg",
-    "/IMAGES/london.jpg",
-    "/IMAGES/budapest.jpg",
-    "/IMAGES/paris.jpg",
-    "/IMAGES/chicago.jpg",
+    "./IMAGES/amsterdam.jpg",
+    "./IMAGES/london.jpg",
+    "./IMAGES/budapest.jpg",
+    "./IMAGES/paris.jpg",
+    "./IMAGES/chicago.jpg",
   ];
   let city_images = document.querySelectorAll(".imgs");
   try {
@@ -1108,7 +1108,7 @@ document.getElementById("menn").addEventListener("click", (e) => {
   });
 });
 
-function change(body_bg, textco,  white, lightdblue, lightgreen, dlightblue){
+function change(body_bg, white, lightdblue, lightgreen, dlightblue){
   let body = document.getElementById("body");
   let weatherlk = document.querySelectorAll(".weather-look"),
       today_temp_ = document.querySelectorAll(".today-temp"),
@@ -1142,11 +1142,6 @@ function change(body_bg, textco,  white, lightdblue, lightgreen, dlightblue){
         top.style.backgroundColor = body_bg;
         userpro.style.backgroundColor = lightgreen;
         userpro.style.border = "1px solid" + lightgreen;
-        if(body.style.backgroundColor === body_bg){
-          for(let go=0; go<=chai.length; go++){
-            chai[go].className += " chaii";
-          }
-        }
         try {
           for(let jkk = 0; jkk<=50; jkk++){
             weatherlk[jkk].style.color = dlightblue;

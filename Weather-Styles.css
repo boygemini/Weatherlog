@@ -662,7 +662,7 @@ header {
 .w-img {
     width: 30%;
     height: 100%;
-    background-image: url('/IMAGES/alejandro-luengo-6GY9TZRHYDY-unsplash.jpg');
+    background-image: url('./IMAGES/alejandro-luengo-6GY9TZRHYDY-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -693,7 +693,7 @@ header {
 
 .ttt{
     height: auto;
-    background-image: ('/HTML:CSS/IMAGES/icons8-sun-100.png');
+    background-image: ('./IMAGES/icons8-sun-100.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
