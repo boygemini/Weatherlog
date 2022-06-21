@@ -251,6 +251,8 @@ const loadupWeather = (city_selected) => {
           isDay = result.current.is_day,
           otherTime = result.current.localtime_epoch;
 
+         
+
           if(isDay === 0){
             change("#060813", "#ffffffc0", "#5d77c7", "#17bcb4ba", "#53d1cb");
           }
@@ -260,7 +262,6 @@ const loadupWeather = (city_selected) => {
           }
 
           
-
         if (meridian < 12) {
           c_meridian.innerText = "AM";
         } else {
@@ -320,6 +321,7 @@ const loadupWeather = (city_selected) => {
         loader.innerText = "Error occourred, please try again";
       }
     };
+    
 
     req.send();
 
@@ -337,12 +339,11 @@ const loadupWeather = (city_selected) => {
       xhr.onload = function () {
         if (xhr.status === 200) {
           let dayOutput = JSON.parse(this.responseText);
-
+          
           let holdingBox = document.getElementById("day_carrier");
           let wholeOutputBox = " ";
           for (let ck = 0; ck <= 6; ck++) {
-            
-            wholeOutputBox += ` <div class='df h-forecast' id='day-box'>
+          wholeOutputBox += ` <div class='df h-forecast' id='day-box'>
           <p class='day'><span id='day-2'>${new Date(dayOutput.data[ck].valid_date).getDate() +
               " " +
               monArr[new Date(dayOutput.data[ck].valid_date).getMonth()] +
@@ -499,31 +500,109 @@ const loadupWeather = (city_selected) => {
               </div>
           </div>
       </div>`;
-
-
-            // let seeAll = document.querySelectorAll('#see-all-2');
-
-            // for (let iterator =0; iterator <= 6; iterator++) {
-            //   try {
-            //     seeAll[iterator].addEventListener('click', (e) => {
-            //       let holder = document.querySelectorAll('.holder2');
-
-            //       if (holder[iterator].style.overflow == 'scroll') {
-            //         holder[iterator].style.overflow = 'hidden';
-            //         seeAll[iterator].innerText = 'See more';
-            //       } else {
-            //         holder[iterator].style.overflow = 'scroll';
-            //         seeAll[iterator].innerText = 'See less';
-            //         let sup = document.querySelectorAll('#ss');
-            //         sup[iterator].scrollIntoView(true);
-            //       }
-            //     });
-            //   } catch (error) {
-            //     console.log(error.message);
-            //   }
-            // }
           }
-          holdingBox.innerHTML = wholeOutputBox;
+          try {
+            switcher();
+          } catch (error) {
+            console.log(error.message);
+          }
+
+          function switcher(){
+            const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
+            const apiKey = "3b8b8609054e425bbdc33941220106";
+
+            // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
+            let reqq = new XMLHttpRequest();
+            reqq.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
+            //   req.open('GET', `${apiUrl}`, false);
+
+            reqq.onload = function () {
+              if(reqq.status === 200){
+                let resultt = JSON.parse(this.responseText)
+                let isDay = resultt.current.is_day;
+                
+
+                holdingBox.innerHTML = wholeOutputBox;
+                if(isDay === 1){
+                  let toWhite = document.querySelectorAll(".chai")
+                  let ww_desc = document.querySelectorAll("#d_weather_desc");
+                  let day__2 = document.querySelectorAll("#day-2");
+                  let smday2 = document.querySelectorAll("#sm-date");
+                  try {
+                    for(let toW = 0; toW<=toWhite.length; toW++){
+                      toWhite[toW].className += " chaiii2"
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+                  try {
+                    for(let kkl = 0; kkl<=ww_desc.length; kkl++){
+                      ww_desc[kkl].style.color = "";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+
+                  try {
+                    for(let kkkl = 0; kkkl<=day__2.length; kkkl++){
+                      ww_desc[kkkl].style.color = "";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+
+                  try {
+                    for(let kklkl = 0; kklkl<=smday2.length; kklkl++){
+                      smday2[kklkl].style.backgroundColor = "";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+                }
+
+                if(isDay === 0){
+                  let toWhite = document.querySelectorAll(".chai")
+                  let ww_desc = document.querySelectorAll("#d_weather_desc");
+                  let day__2 = document.querySelectorAll("#day-2");
+                  let smday2 = document.querySelectorAll("#sm-date");
+                  try {
+                    for(let toW = 0; toW<=toWhite.length; toW++){
+                      toWhite[toW].className += " chaii"
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+                  try {
+                    for(let kkl = 0; kkl<=ww_desc.length; kkl++){
+                      ww_desc[kkl].style.color = "#5d77c7";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+
+                  try {
+                    for(let kkkl = 0; kkkl<=day__2.length; kkkl++){
+                      day__2[kkkl].style.color = "#53d1cb";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+
+                 try {
+                    for(let kklkl = 0; kklkl<=smday2.length; kklkl++){
+                      smday2[kklkl].style.color = "#ffffffc0";
+                    }
+                  } catch (error) {
+                    console.log(error.message);
+                  }
+                }
+              }
+            }
+
+            reqq.send();
+          }
+
+          
         }
       };
       xhr.send();
@@ -555,10 +634,11 @@ document.getElementById("load").addEventListener("keydown", (e) => {
 let moreee = document.getElementById("more");
 let line = document.querySelectorAll("#hr");
 for (let i = 0; i <= line.length; i++) {
-  line[1].style.display = "none";
+  line[1].style.display = "flex";
 }
-moreee.style.display = "none";
+moreee.style.display = "flex";
 document.getElementById("holder").style.overflow = "hidden";
+document.getElementById("arrow").style.transform = "rotate(360deg)";
 document.getElementById("see-all").addEventListener("click", (e) => {
   let arrow = document.getElementById("arrow");
   let holder = document.getElementById("holder");
@@ -596,11 +676,11 @@ document.getElementById("see-all").addEventListener("click", (e) => {
 
 const cityImg = () => {
   let cityArr = [
-    "./IMAGES/amsterdam.jpg",
-    "./IMAGES/london.jpg",
-    "./IMAGES/budapest.jpg",
-    "./IMAGES/paris.jpg",
-    "./IMAGES/chicago.jpg",
+    "/HTML:CSS/IMAGES/amsterdam.jpg",
+    "/HTML:CSS/IMAGES/london.jpg",
+    "/HTML:CSS/IMAGES/budapest.jpg",
+    "/HTML:CSS/IMAGES/paris.jpg",
+    "/HTML:CSS/IMAGES/chicago.jpg",
   ];
   let city_images = document.querySelectorAll(".imgs");
   try {
@@ -1142,6 +1222,7 @@ function change(body_bg, white, lightdblue, lightgreen, dlightblue){
         top.style.backgroundColor = body_bg;
         userpro.style.backgroundColor = lightgreen;
         userpro.style.border = "1px solid" + lightgreen;
+
         try {
           for(let jkk = 0; jkk<=50; jkk++){
             weatherlk[jkk].style.color = dlightblue;

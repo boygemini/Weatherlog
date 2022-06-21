@@ -14,7 +14,7 @@
     font-family: 'Nunito', Helvetica, sans-serif;
     font-weight: 500;
     scroll-behavior: smooth;
-    color: #040509c0;   
+    color: #040509a8;   
 }
 
 body::-webkit-scrollbar {
@@ -469,27 +469,27 @@ header {
 .box {
     width: 20%;
     height: 170px;
-    transform: translateY(5px);
+    /* transform: translateY(5px); */
     transition: all .3s ease-out;
     cursor: pointer;
 }
 
 .imgs:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     transition: all .3s ease-out;
 }
 
 .box:hover .city-name {
     color: #383bf0;
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .city-name {
-    transition: all .4s ease-in-out;
+    transition: all .3s ease-in-out;
 }
 
 .imgs:hover{
-    box-shadow: 0px 35px 20px -25px #090a2c66;
+    /* box-shadow: 0px 35px 20px -25px #090a2c66; */
     transition: all .3s ease-in-out;
 }
 
@@ -506,7 +506,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 20px;
-    box-shadow: 0px 15px 10px -10px #383b872e;
+    box-shadow: 0px 15px 10px -10px #23255428;
     transition: all .2s ease-in-out;
 }
 
@@ -654,15 +654,15 @@ header {
 
 .weather-container {
     width: 100%;
-    height: 500px;
+    height: auto;
     display: flex;
     margin-top: 30px;
 }
 
 .w-img {
     width: 30%;
-    height: 100%;
-    background-image: url('./IMAGES/alejandro-luengo-6GY9TZRHYDY-unsplash.jpg');
+    height: auto;
+    background-image: url('/HTML:CSS/IMAGES/alejandro-luengo-6GY9TZRHYDY-unsplash.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -676,6 +676,44 @@ header {
     padding: 30px;
 }
 
+.oploc{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    column-gap: 10px;
+    width: 100%;
+    height: 100px;
+    background-color: #17bcb4;
+    position: absolute;
+    top: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background: linear-gradient(to bottom, #060813cb 15%, #06081300 100%);
+}
+
+.oploc h1,
+.oploc p{
+    color: whitesmoke;
+}
+
+.oploc h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.oploc p{
+    color: rgba(245, 245, 245, 0.68);
+    font-size: 15px;
+}
+
+.oploc img{
+    background-color: #f5f5f5;
+    padding: 2px;
+    border-radius: 5px;
+    width: 35px;
+    height: 40px;
+}
+
 .moredet{
     display: flex;
     flex-direction: column;
@@ -683,7 +721,7 @@ header {
     align-items: center;
 }
 
-.ttt img{
+.ttt .oploc{
     width: 50px;
     position: absolute;
     top: 5%;
@@ -693,7 +731,7 @@ header {
 
 .ttt{
     height: auto;
-    background-image: ('./IMAGES/icons8-sun-100.png');
+    background-image: ('/HTML:CSS/IMAGES/icons8-sun-100.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -773,7 +811,7 @@ header {
     align-items: center;
     width: 70%;
     height: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 
@@ -781,10 +819,16 @@ header {
     align-self: flex-end;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0px 20px 10px 20px;
     font-weight: 500;
-    color: #265351e4;
+    color: #348581e4;
     cursor: pointer;
+}
+
+#see-all {
+    font-size: 15px;
+    text-decoration: 2px underline #348581e4;
 }
 
 .see-all:hover {
@@ -824,7 +868,8 @@ header {
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    background-color: #17bcb429;
+    background-color: #17bcb415;
+    /* background-color: #17bcb429; */
     border-radius: 30px;
     padding: 10px;
 }
@@ -894,7 +939,10 @@ header {
 
 .w-icon {
     align-self: flex-start;
-    color: #ffa500;
+    padding: 5px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
 }
 
 .feels-like {
@@ -929,8 +977,9 @@ header {
 }
 
 .w-icon img {
-    width: 50px;
+    width:50px;
     height: 50px;
+    padding: 5px;
 }
 
 .hourly-forecast {
@@ -1085,6 +1134,7 @@ header {
 .day-name {
     width: 40%;
     text-align: left;
+    font-size: 1px;
 }
 
 .rating {
@@ -2166,7 +2216,7 @@ a {
     }
 
     #unit {
-        font-size: 15px;
+        font-size: 15px;    
         font-weight: 400;
     }
 
