@@ -185,7 +185,7 @@ const loadupWeather = (city_selected) => {
     const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
     const apiKey = "3b8b8609054e425bbdc33941220106";
 
-    // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
+    // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
     let req = new XMLHttpRequest();
     req.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
     //   req.open('GET', `${apiUrl}`, false);
@@ -354,7 +354,7 @@ const loadupWeather = (city_selected) => {
               }</span>
           <span class='see-all-2' id='see-all-2'>See more</span>
           <div class='card-top'>
-              <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+              <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                   height='50px'>
               <p id='d_weather_desc'>${dayOutput.data[ck].weather.description
               }</p>
@@ -363,7 +363,7 @@ const loadupWeather = (city_selected) => {
               <div class='day-info' id='ss'>
                   <div class='range' id='range' >
                       <h1 class='day-name chai' >Sunrise</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='sunrise-2' class="chai">${new Date(dayOutput.data[ck].sunrise_ts).getHours() +
               ":" +
@@ -372,7 +372,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Sunset</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='sunset-2' class="chai">${new Date(dayOutput.data[ck].sunset_ts).getHours() +
               ":" +
@@ -381,7 +381,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai' >Moonrise</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='moonrise-2' class="chai">${new Date(dayOutput.data[ck].moonrise_ts).getHours() +
               ":" +
@@ -390,7 +390,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Moonset</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='moonset-2' class="chai">${new Date(dayOutput.data[ck].moonset_ts).getHours() +
               ":" +
@@ -399,7 +399,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Temperature</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='min-temp-2'>${dayOutput.data[ck].min_temp
               }</span> - <span
@@ -408,7 +408,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Wind</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_cdir
               }</span><sup> o</sup><span
@@ -417,21 +417,21 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Wind Gust</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_gust_spd
               }</span><span id='unit2' class="chai"> mph</span></h1>
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Humidity</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='humidity-2' class="chai">${dayOutput.data[ck].rh
               }</span><span id='unit2' class="chai"> %</span></h1>
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Precipitation</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='precipitation-2' class="chai">${Math.ceil(
                 dayOutput.data[ck].precip
@@ -441,14 +441,14 @@ const loadupWeather = (city_selected) => {
 
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Rainfall</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='rainfall-2' class="chai">${dayOutput.data[ck].pop
               }</span><span id='unit2' class="chai"> %</span></h1>
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Pressure</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='pressure-2' class="chai">${dayOutput.data[ck].pres
               }</span><span id='unit2' class="chai"> hPa</span>
@@ -456,7 +456,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Visibility</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='visibility-2' class="chai">${Math.round(
                 dayOutput.data[ck].vis
@@ -465,7 +465,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Snow Depth</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='show-depth-2' class="chai">${dayOutput.data[ck].snow_depth
               }</span><span id='unit2' class="chai"> cm</span>
@@ -473,7 +473,7 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Snow Chances</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='show-chances-2' class="chai">${dayOutput.data[ck].snow
               }</span><span id='unit2' class="chai"> %</span>
@@ -481,14 +481,14 @@ const loadupWeather = (city_selected) => {
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>UV</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='uv-2' class="chai">${dayOutput.data[ck].uv
               }</span><span id='unit2' class="chai"> mW/cm2</span></h1>
                   </div>
                   <div class='range' id='range'>
                       <h1 class='day-name chai'>Dew Point</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                      <img src='./IMAGES/icons8-sunrise-100.png' width='50px'
                           height='50px'>
                       <h1 class='rating'><span id='dew-point-2' class="chai">${dayOutput.data[ck].dewpt
               }</span><span id='unit2' class="chai"> o</span></h1>
@@ -511,7 +511,7 @@ const loadupWeather = (city_selected) => {
             const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
             const apiKey = "3b8b8609054e425bbdc33941220106";
 
-            // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
+            // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
             let reqq = new XMLHttpRequest();
             reqq.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
             //   req.open('GET', `${apiUrl}`, false);
@@ -676,11 +676,11 @@ document.getElementById("see-all").addEventListener("click", (e) => {
 
 const cityImg = () => {
   let cityArr = [
-    "/HTML:CSS/IMAGES/amsterdam.jpg",
-    "/HTML:CSS/IMAGES/london.jpg",
-    "/HTML:CSS/IMAGES/budapest.jpg",
-    "/HTML:CSS/IMAGES/paris.jpg",
-    "/HTML:CSS/IMAGES/chicago.jpg",
+    "./IMAGES/amsterdam.jpg",
+    "./IMAGES/london.jpg",
+    "./IMAGES/budapest.jpg",
+    "./IMAGES/paris.jpg",
+    "./IMAGES/chicago.jpg",
   ];
   let city_images = document.querySelectorAll(".imgs");
   try {
