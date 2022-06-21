@@ -719,7 +719,7 @@ document.getElementById("load").addEventListener("input", (e) => {
   async function timeoutHandler() {
     await sleep(1);
     let eValue = e.target.value;
-    let cityApiUrl = `https://api.geonames.org/searchJSON?q=${eValue}&maxRows=15&username=jb1104`;
+    let cityApiUrl = `http://api.geonames.org/searchJSON?q=${eValue}&maxRows=15&username=jb1104`;
     let searchRequest = new XMLHttpRequest();
     searchRequest.open("GET", cityApiUrl, false);
     searchRequest.onload = function () {
