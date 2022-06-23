@@ -56,7 +56,7 @@ document.getElementById("userloc").addEventListener("click", (e)=>{
     let Loc = `${position.coords.longitude},${position.coords.longitude}`
     loadupWeather(Loc)
 
-    const apiiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
+    const apiiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
     const apiiKey = "3b8b8609054e425bbdc33941220106";
     let newReq = new XMLHttpRequest();
     newReq.open("GET", `${apiiUrl}${Loc}&key=${apiiKey}`, false);
@@ -182,10 +182,10 @@ const loadupWeather = (city_selected) => {
 
   async function timeoutHandler() {
     await sleep(1);
-    const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
+    const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
     const apiKey = "3b8b8609054e425bbdc33941220106";
 
-    // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
+    // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
     let req = new XMLHttpRequest();
     req.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
     //   req.open('GET', `${apiUrl}`, false);
@@ -343,147 +343,147 @@ const loadupWeather = (city_selected) => {
           let holdingBox = document.getElementById("day_carrier");
           let wholeOutputBox = " ";
           for (let ck = 0; ck <= 6; ck++) {
-          wholeOutputBox += ` <div class='df h-forecast' id='day-box'>
-          <p class='day'><span id='day-2'>${new Date(dayOutput.data[ck].valid_date).getDate() +
-              " " +
-              monArr[new Date(dayOutput.data[ck].valid_date).getMonth()] +
-              ", " +
-              new Date(dayOutput.data[ck].valid_date).getFullYear()
-              }</span></p>
-          <span id='sm-date' class="chai">${dayArr2[new Date(dayOutput.data[ck].valid_date).getDay()]
-              }</span>
-          <span class='see-all-2' id='see-all-2'>See more</span>
-          <div class='card-top'>
-              <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
-                  height='50px'>
-              <p id='d_weather_desc'>${dayOutput.data[ck].weather.description
-              }</p>
-          </div>
-          <div class='holder2'>
-              <div class='day-info' id='ss'>
-                  <div class='range' id='range' >
-                      <h1 class='day-name chai' >Sunrise</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png'>
-                      <h1 class='rating'><span id='sunrise-2' class="chai">${new Date(dayOutput.data[ck].sunrise_ts).getHours() +
-              ":" +
-              new Date(dayOutput.data[ck].sunrise_ts).getMinutes()
-              }</span><span id='unit2' class="chai"> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Sunset</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png'>
-                      <h1 class='rating'><span id='sunset-2' class="chai">${new Date(dayOutput.data[ck].sunset_ts).getHours() +
-              ":" +
-              new Date(dayOutput.data[ck].sunset_ts).getMinutes()
-              }</span><span id='unit2' class="chai"> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai' >Moonrise</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-moonrise-80.png'>
-                      <h1 class='rating'><span id='moonrise-2' class="chai">${new Date(dayOutput.data[ck].moonrise_ts).getHours() +
-              ":" +
-              new Date(dayOutput.data[ck].moonrise_ts).getMinutes()
-              }</span><span id='unit2' class="chai"> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Moonset</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-moonrise-80.png'>
-                      <h1 class='rating'><span id='moonset-2' class="chai">${new Date(dayOutput.data[ck].moonset_ts).getHours() +
-              ":" +
-              new Date(dayOutput.data[ck].moonset_ts).getMinutes()
-              }</span><span id='unit2' class="chai"> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Temperature</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' id="rimg">
-                      <h1 class='rating'><span id='min-temp-2'>${dayOutput.data[ck].min_temp
-              }</span> - <span
-                              id='max-temp-2' class="chai">${dayOutput.data[ck].min_temp
-              }</span><sup> o</sup><span id='unit2' class="chai">C</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Wind</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-wind-98.png' id="rimg">
-                      <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_cdir
-              }</span><sup> o</sup><span
-                              id='unit2' class="chai">${dayOutput.data[ck].wind_dir
-              }</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Wind Gust</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-wind-60(1).png' id="rimg">
-                      <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_gust_spd
-              }</span><span id='unit2' class="chai"> mph</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Humidity</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-humidity-96.png' id="rimg">
-                      <h1 class='rating'><span id='humidity-2' class="chai">${dayOutput.data[ck].rh
-              }</span><span id='unit2' class="chai"> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Precipitation</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-rain-gauge-100.png' id="rimg">
-                      <h1 class='rating'><span id='precipitation-2' class="chai">${Math.ceil(
-                dayOutput.data[ck].precip
-              )} </span><span id='unit2' class="chai"> mm</span>
-                      </h1>
-                  </div>
-
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Rainfall</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-rain-80.png' id="rimg">
-                      <h1 class='rating'><span id='rainfall-2' class="chai">${dayOutput.data[ck].pop
-              }</span><span id='unit2' class="chai"> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Pressure</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
-                      <h1 class='rating'><span id='pressure-2' class="chai">${dayOutput.data[ck].pres
-              }</span><span id='unit2' class="chai"> hPa</span>
-                      </h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Visibility</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-eye-99.png' id="rimg">
-                      <h1 class='rating'><span id='visibility-2' class="chai">${Math.round(
-                dayOutput.data[ck].vis
-              )}</span><span id='unit2' class="chai"> km</span>
-                      </h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Snow Depth</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-snow-80.png' id="rimg">
-                      <h1 class='rating'><span id='show-depth-2' class="chai">${dayOutput.data[ck].snow_depth
-              }</span><span id='unit2' class="chai"> cm</span>
-                      </h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Snow Chances</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-snow-80.png' id="rimg">
-                      <h1 class='rating'><span id='show-chances-2' class="chai">${dayOutput.data[ck].snow
-              }</span><span id='unit2' class="chai"> %</span>
-                      </h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>UV</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-uv-index-64.png' id="rimg">
-                      <h1 class='rating'><span id='uv-2' class="chai">${dayOutput.data[ck].uv
-              }</span><span id='unit2' class="chai"> mW/cm2</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name chai'>Dew Point</h1>
-                      <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' id="rimg">
-                      <h1 class='rating'><span id='dew-point-2' class="chai">${dayOutput.data[ck].dewpt
-              }</span><span id='unit2' class="chai"> o</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                      <h1 class='day-name inv chai'>r</h1>
-
-                  </div>
-              </div>
-          </div>
-      </div>`;
+            wholeOutputBox += ` <div class='df h-forecast' id='day-box'>
+            <p class='day'><span id='day-2'>${new Date(dayOutput.data[ck].valid_date).getDate() +
+                " " +
+                monArr[new Date(dayOutput.data[ck].valid_date).getMonth()] +
+                ", " +
+                new Date(dayOutput.data[ck].valid_date).getFullYear()
+                }</span></p>
+            <span id='sm-date' class="chai">${dayArr2[new Date(dayOutput.data[ck].valid_date).getDay()]
+                }</span>
+            <span class='see-all-2' id='see-all-2'>See more</span>
+            <div class='card-top'>
+                <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' width='50px'
+                    height='50px'>
+                <p id='d_weather_desc'>${dayOutput.data[ck].weather.description
+                }</p>
+            </div>
+            <div class='holder2'>
+                <div class='day-info' id='ss'>
+                    <div class='range' id='range' >
+                        <h1 class='day-name chai' >Sunrise</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png'>
+                        <h1 class='rating'><span id='sunrise-2' class="chai">${new Date(dayOutput.data[ck].sunrise_ts).getHours() +
+                ":" +
+                new Date(dayOutput.data[ck].sunrise_ts).getMinutes()
+                }</span><span id='unit2' class="chai"> AM</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Sunset</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png'>
+                        <h1 class='rating'><span id='sunset-2' class="chai">${new Date(dayOutput.data[ck].sunset_ts).getHours() +
+                ":" +
+                new Date(dayOutput.data[ck].sunset_ts).getMinutes()
+                }</span><span id='unit2' class="chai"> PM</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai' >Moonrise</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-moonrise-80.png'>
+                        <h1 class='rating'><span id='moonrise-2' class="chai">${new Date(dayOutput.data[ck].moonrise_ts).getHours() +
+                ":" +
+                new Date(dayOutput.data[ck].moonrise_ts).getMinutes()
+                }</span><span id='unit2' class="chai"> PM</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Moonset</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-moonrise-80.png'>
+                        <h1 class='rating'><span id='moonset-2' class="chai">${new Date(dayOutput.data[ck].moonset_ts).getHours() +
+                ":" +
+                new Date(dayOutput.data[ck].moonset_ts).getMinutes()
+                }</span><span id='unit2' class="chai"> AM</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Temperature</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' id="rimg">
+                        <h1 class='rating'><span id='min-temp-2'>${dayOutput.data[ck].min_temp
+                }</span> - <span
+                                id='max-temp-2' class="chai">${dayOutput.data[ck].min_temp
+                }</span><sup> o</sup><span id='unit2' class="chai">C</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Wind</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-wind-98.png' id="rimg">
+                        <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_cdir
+                }</span><sup> o</sup><span
+                                id='unit2' class="chai">${dayOutput.data[ck].wind_dir
+                }</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Wind Gust</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-wind-60(1).png' id="rimg">
+                        <h1 class='rating'><span id='wind-2' class="chai">${dayOutput.data[ck].wind_gust_spd
+                }</span><span id='unit2' class="chai"> mph</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Humidity</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-humidity-96.png' id="rimg">
+                        <h1 class='rating'><span id='humidity-2' class="chai">${dayOutput.data[ck].rh
+                }</span><span id='unit2' class="chai"> %</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Precipitation</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-rain-gauge-100.png' id="rimg">
+                        <h1 class='rating'><span id='precipitation-2' class="chai">${Math.ceil(
+                  dayOutput.data[ck].precip
+                )} </span><span id='unit2' class="chai"> mm</span>
+                        </h1>
+                    </div>
+  
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Rainfall</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-rain-80.png' id="rimg">
+                        <h1 class='rating'><span id='rainfall-2' class="chai">${dayOutput.data[ck].pop
+                }</span><span id='unit2' class="chai"> %</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Pressure</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
+                        <h1 class='rating'><span id='pressure-2' class="chai">${dayOutput.data[ck].pres
+                }</span><span id='unit2' class="chai"> hPa</span>
+                        </h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Visibility</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-eye-99.png' id="rimg">
+                        <h1 class='rating'><span id='visibility-2' class="chai">${Math.round(
+                  dayOutput.data[ck].vis
+                )}</span><span id='unit2' class="chai"> km</span>
+                        </h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Snow Depth</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-snow-80.png' id="rimg">
+                        <h1 class='rating'><span id='show-depth-2' class="chai">${dayOutput.data[ck].snow_depth
+                }</span><span id='unit2' class="chai"> cm</span>
+                        </h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Snow Chances</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-snow-80.png' id="rimg">
+                        <h1 class='rating'><span id='show-chances-2' class="chai">${dayOutput.data[ck].snow
+                }</span><span id='unit2' class="chai"> %</span>
+                        </h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>UV</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-uv-index-64.png' id="rimg">
+                        <h1 class='rating'><span id='uv-2' class="chai">${dayOutput.data[ck].uv
+                }</span><span id='unit2' class="chai"> mW/cm2</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name chai'>Dew Point</h1>
+                        <img src='/HTML:CSS/IMAGES/icons8-sunrise-100.png' id="rimg">
+                        <h1 class='rating'><span id='dew-point-2' class="chai">${dayOutput.data[ck].dewpt
+                }</span><span id='unit2' class="chai"> o</span></h1>
+                    </div>
+                    <div class='range' id='range'>
+                        <h1 class='day-name inv chai'>r</h1>
+  
+                    </div>
+                </div>
+            </div>
+        </div>`;
           }
           try {
             switcher();
@@ -492,10 +492,10 @@ const loadupWeather = (city_selected) => {
           }
 
           function switcher(){
-            const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
+            const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
             const apiKey = "3b8b8609054e425bbdc33941220106";
 
-            // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
+            // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
             let reqq = new XMLHttpRequest();
             reqq.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
             //   req.open('GET', `${apiUrl}`, false);
@@ -660,11 +660,11 @@ document.getElementById("see-all").addEventListener("click", (e) => {
 
 const cityImg = () => {
   let cityArr = [
-    "/HTML:CSS/IMAGES/amsterdam.jpg",
-    "/HTML:CSS/IMAGES/london.jpg",
-    "/HTML:CSS/IMAGES/budapest.jpg",
-    "/HTML:CSS/IMAGES/paris.jpg",
-    "/HTML:CSS/IMAGES/chicago.jpg",
+    "./IMAGES/amsterdam.jpg",
+    "./IMAGES/london.jpg",
+    "./IMAGES/budapest.jpg",
+    "./IMAGES/paris.jpg",
+    "./IMAGES/chicago.jpg",
   ];
   let city_images = document.querySelectorAll(".imgs");
   try {
@@ -1069,7 +1069,7 @@ document.getElementById("menn").addEventListener("click", (e) => {
         console.log(error.message);
       }
     }
-    if(window.innerWidth > 631 && window.innerWidth <= 960 && sideBar.style.width === "0%"){
+    if(window.innerWidth > 631 && window.innerWidth <= 960 && sideBar.style.width ==="0%"){
       sideBar.style.width = "30%";
       sideBar.style.boxShadow = "0px 0px 0px 1000px rgba(3, 5, 19, 0.317)"
       sideBar.style.display = "block"
