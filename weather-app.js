@@ -56,7 +56,7 @@ document.getElementById("userloc").addEventListener("click", (e)=>{
     let Loc = `${position.coords.longitude},${position.coords.longitude}`
     loadupWeather(Loc)
 
-    const apiiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
+    const apiiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
     const apiiKey = "3b8b8609054e425bbdc33941220106";
     let newReq = new XMLHttpRequest();
     newReq.open("GET", `${apiiUrl}${Loc}&key=${apiiKey}`, false);
@@ -182,7 +182,7 @@ const loadupWeather = (city_selected) => {
 
   async function timeoutHandler() {
     await sleep(1);
-    const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
+    const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
     const apiKey = "3b8b8609054e425bbdc33941220106";
 
     // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
@@ -492,7 +492,7 @@ const loadupWeather = (city_selected) => {
           }
 
           function switcher(){
-            const apiUrl = "http://api.weatherapi.com/v1/forecast.json?q=";
+            const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
             const apiKey = "3b8b8609054e425bbdc33941220106";
 
             // const apiUrl = 'http://127.0.0.1:5500/HTML:CSS/testapi.json';
