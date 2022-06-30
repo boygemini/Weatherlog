@@ -70,6 +70,48 @@ section {
     display: flex;
 }
 
+
+#one{
+    background-color: #70809051;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    animation: preloader 1s infinite;
+    opacity: 0;
+}
+
+#two{
+    background-color: #70809051;
+    width: 100%;
+    height: 60px;
+    border-radius: 3px;
+    animation: preloader 1s infinite;
+    opacity: 0;
+}
+
+#three{
+    background-color: #70809051;
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    animation: preloader 1s infinite;
+    opacity: 0;
+}
+
+@keyframes preloader {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: .5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
 .sidebar {
     height: auto;
     width: 15%;
@@ -325,6 +367,7 @@ section {
 
 #load{
     width: 500px;
+
 }
 
 .left{
@@ -934,7 +977,7 @@ header {
     color: #03040777;
 }
 
-.today-temp {
+.today-temp{
     font-size: 30px;
     font-weight: 700;
 }
@@ -999,6 +1042,10 @@ header {
 .hr {
     width: 100%;
     border: .6px solid #53969352;
+}
+
+.hr2{
+    display: none;
 }
 
 .m2 {
@@ -1097,29 +1144,37 @@ header {
     border-radius: 7px;
     box-shadow: -3px -3px 10px -5px #062d2be1;
     cursor: pointer;
-    animation: updown infinite 1s cubic-bezier(0,1.5,1,1.5);
-    transition: all 1s cubic-bezier(0,1.5,1,1.5);
+    animation: updown infinite 1s ease-in-out;
+    transition: all 2s ease-in-out;
+}
+
+#see-all-2 img{
+    width: 20px;
 }
 
 @keyframes updown {
-    from{
+    0%{
         bottom: 10px;
-        right: 10px;
     }
-    to{
+    50%{
         bottom: 5px;
-        right: 10px;
+    }
+
+    100%{
+        bottom: 10px;
     }
 }
 
 @-webkit-keyframes updown {
-    from{
+    0%{
         bottom: 10px;
-        right: 10px;
     }
-    to{
+    50%{
         bottom: 5px;
-        right: 10px;
+    }
+
+    100%{
+        bottom: 10px;
     }
 }
 
@@ -1280,6 +1335,26 @@ a {
     font-size: 13px;
     /* letter-spacing:3px; */
 }
+@media screen and (min-height:0px) and (max-height:844px){
+    .up{
+       display: none;
+    }
+
+    #big-logo{
+        font-size: 13px;
+    }
+
+    .current{
+        height: auto;
+        padding: 0px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+}
 
 @media screen and (min-width:0px) and (max-width:268px){
     .avatar{
@@ -1300,10 +1375,24 @@ a {
         padding-top: 5px;
     }
 
+    .hr2{
+        display: flex;
+        transform: rotate(90deg);
+        width: 10px;
+        height: 10px;
+        background-color: #0000001a;
+        border: 1px solid #0000003f;
+    }
+
     #fcity{
         width: 100%;
         margin-top: 10px;
         text-align: center;
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
     }
 
     #fcity:first-child{
@@ -1380,6 +1469,8 @@ a {
     .menn{
         display: flex;
         width: 30px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .logo {
@@ -1433,7 +1524,7 @@ a {
 
     .topper{
         position: sticky;
-        top: -83px;
+        top: -65px;
         z-index: 80293;
         padding: 10px 10px;
         width: 100%;
@@ -1457,7 +1548,7 @@ a {
     
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
         margin-top: -10px;
         height: 40px;
     }
@@ -1751,6 +1842,25 @@ a {
         width: 100%;
         margin-top: 10px;
         text-align: center;
+        align-self: center;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        display: flex;
+        column-gap: 20px;
+    }
+
+    .hr2{
+        display: flex;
+        transform: rotate(90deg);
+        width: 10px;
+        height: 10px;
+        background-color: #0000001a;
+        border: 1px solid #0000003f;
+    }
+
+    #current{
+        display: none;
     }
 
     #fcity:first-child{
@@ -1767,7 +1877,7 @@ a {
 
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
     }
     
     #lcp{
@@ -1827,6 +1937,8 @@ a {
     .menn{
         display: flex;
         width: 30px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .logo {
@@ -1840,7 +1952,7 @@ a {
     }
 
     #big{
-        font-size: 1em;
+        font-size: 13px;
     }
 
     .alert{
@@ -1879,7 +1991,7 @@ a {
 
     .topper{
         position: sticky;
-        top: -83px;
+        top: -65px;
         z-index: 80293;
         padding: 10px 10px;
         width: 100%;
@@ -1902,7 +2014,7 @@ a {
     
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
         margin-top: -10px;
         height: 40px;
     }
@@ -2193,10 +2305,24 @@ a {
         padding-top: 5px;
     }
 
+    .hr2{
+        display: flex;
+        transform: rotate(90deg);
+        width: 10px;
+        height: 10px;
+        background-color: #0000001a;
+        border: 1px solid #0000003f;
+    }
+
     #fcity{
         width: 100%;
         margin-top: 10px;
         text-align: center;
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
     }
 
     #fcity:first-child{
@@ -2213,7 +2339,7 @@ a {
 
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
     }
     
     #lcp{
@@ -2273,6 +2399,8 @@ a {
     .menn{
         display: flex;
         width: 30px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .logo {
@@ -2283,6 +2411,10 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    #big{
+        font-size: 15px;
     }
 
     .alert{
@@ -2321,7 +2453,7 @@ a {
 
     .topper{
         position: sticky;
-        top: -83px;
+        top: -70px;
         z-index: 80293;
         padding: 10px 10px;
         width: 100%;
@@ -2344,7 +2476,7 @@ a {
     
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
         margin-top: -10px;
         height: 40px;
     }
@@ -2640,6 +2772,20 @@ a {
         width: 100%;
         margin-top: 10px;
         text-align: center;
+        background-color: transparent;
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hr2{
+        display: flex;
+        transform: rotate(90deg);
+        width: 10px;
+        height: 10px;
+        background-color: #0000001a;
+        border: 1px solid #0000003f;
     }
 
     #fcity:first-child{
@@ -2653,10 +2799,11 @@ a {
         top: 1%;
         height: 40px;
     }
+    
 
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
     }
     
     #lcp{
@@ -2716,6 +2863,8 @@ a {
     .menn{
         display: flex;
         width: 30px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .logo {
@@ -2764,7 +2913,7 @@ a {
 
     .topper{
         position: sticky;
-        top: -83px;
+        top: -70px;
         z-index: 80293;
         padding: 10px 10px;
         width: 100%;
@@ -2787,7 +2936,7 @@ a {
     
     .left{
         width: 100%;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
         margin-top: -10px;
         height: 40px;
     }
@@ -3108,6 +3257,8 @@ a {
     z-index: 100033092939;
     position: absolute;
     width: 30px;
+    border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     
@@ -3241,7 +3392,7 @@ a {
     .left{
         width: 100%;
         height: 50px;
-        border: .5px solid #5767c05e;
+        border: 1.5px solid #5767c05e;
     }
     
     #lcp{
@@ -3686,6 +3837,11 @@ a {
         padding-bottom: 0px;
     }
 
+    .h-forecast{
+        display: flex;
+        justify-content: space-around;
+    }
+
     #hh .lt {
         color: #f5f5f5;
         font-size: 18px;
@@ -3794,6 +3950,11 @@ a {
     .dashboard {
         width: 85%;
         max-width: 2000px;
+        padding: 0px;
+    }
+
+    .mainnnn{
+        padding: 0px 20px;
     }
 
     .top {
@@ -3808,8 +3969,9 @@ a {
         position: sticky;
         top: 0%;
         z-index: 100;
-        padding: 20px 0px;
+        padding: 20px 20px;
         background-color: white;
+        box-shadow: 0px 10px 30px -15px rgba(112, 128, 144, 0.63);
     }
 
     .user-profile p {

@@ -71,13 +71,13 @@
             <img src="./IMAGES/bell.png" />
           </div>
           <div class="user-profile">
-            <img class="avatar" src="./IMAGES/icons8-map-grid-100.png" style="border: none;" />
+            <img class="avatar" src="./IMAGES/user.png" />
             <img class="arrow" src="./IMAGES/arrow-down-sign-to-navigate.png" />
           </div>
         </div>
         </div>
         <div class="top">
-          <div class="left">
+          <div class="left" id="load">
             <div class="left-con" >
               <p class="lcp" id="lcp"><img  src="./IMAGES/icons8-user-location-64.png" width="30px" height="30px" id="userloc" alt="" srcset=""></p>
               <input type="text" placeholder="Enter a city name" id="load" autocomplete="off" />
@@ -100,7 +100,7 @@
       </div>
 
      <div class="mainnnn">
-      <header id="fcity" class="chai">Cities</header>
+      <header id="fcity" class="chai"><hr class="hr2"> Cities <hr class="hr2"></header>
       <div class="overflow">
         <div class="scroller">
           <div class="five-imgs">
@@ -198,7 +198,7 @@
         </div>
       </div>
 
-      <h1 class="city chai" id="fcity">Current Weather</h1>
+      <h1 class="city chai" id="fcity"><hr class="hr2"> Current Weather <hr class="hr2"></h1>
       <span id="pointer"></span>
       <div class="weather-container">
         <div class="w-img">
@@ -243,11 +243,11 @@
                   <div class="sunlight">
                     <h1 class="weather-look" id="weather-look">Temperature</h1>
                     <h1 class="today-temp">
-                      <span id="today-temp" class="chai">--</span> <sup class="chai">o</sup><span class="chai">C</span>
+                      <span id="today-temp" class="chai"></span> <sup class="chai">o</sup><span class="chai">C</span>
                     </h1>
                     <h2 class="feels-like" .>Feels like</h2>
                     <h2 class="fl-temp">
-                      <span id="feels-like" class="chai">--</span> <sup class="chai">o</sup><span class="chai">C</span>
+                      <span id="feels-like" class="chai"></span> <sup class="chai">o</sup><span class="chai">C</span>
                     </h2>
                   </div>
                 </div>
@@ -258,7 +258,7 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Rainfall</h1>
                     <h1 class="today-temp">
-                      <span class="chai" id="rainfall">89</span>
+                      <span class="chai" id="rainfall"></span>
                       <span class="unit" id="unit">%</span>
                     </h1>
                     <h2 class="feels-like">Chances In</h2>
@@ -274,12 +274,12 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Humidity</h1>
                     <h1 class="today-temp">
-                      <span id="humidity" class="chai">--</span>
+                      <span id="humidity" class="chai"></span>
                       <span class="unit" id="unit">%</span>
                     </h1>
                     <h2 class="feels-like">Dew Point</h2>
                     <h2 class="fl-temp">
-                      <span id="dew-point" class="chai">--</span><sup class="chai"> o</sup>
+                      <span id="dew-point" class="chai"></span><sup class="chai"> o</sup>
                     </h2>
                   </div>
                 </div>
@@ -290,7 +290,7 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Pressure</h1>
                     <h1 class="today-temp">
-                      <span id="pressure" class="chai">--</span>
+                      <span id="pressure" class="chai"></span>
                       <span class="unit" id="unit">hPa</span>
                     </h1>
                     <!-- <h2 class='feels-like'>Dew Point</h2>
@@ -322,13 +322,13 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Wind</h1>
                     <h1 class="today-temp">
-                      <span id="wind" class="chai">233</span>
+                      <span id="wind" class="chai"></span>
                       <span class="unit" id="unit">km/h</span>
                     </h1>
                     <h2 class="feels-like">Wind Direction</h2>
                     <h2 class="fl-temp">
-                      <span id="wind-degree" class="chai">--</span> <sup class="chai">o </sup><span class="m2 meridian"
-                        id="wind-direction" class="chai">--</span>
+                      <span id="wind-degree" class="chai"></span> <sup class="chai">o </sup><span class="m2 meridian"
+                        id="wind-direction" class="chai"></span>
                     </h2>
                   </div>
                 </div>
@@ -339,11 +339,11 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Visibility</h1>
                     <h1 class="today-temp">
-                      <span id="visibility" class="chai">--</span><span class="unit" id="unit"> km</span>
+                      <span id="visibility" class="chai"></span><span class="unit" id="unit"> km</span>
                     </h1>
                     <h2 class="feels-like">in miles</h2>
                     <h2 class="fl-temp">
-                      <span id="v-miles" class="chai">--</span>
+                      <span id="v-miles" class="chai"></span>
                       <span class="m2 meridian">miles</span>
                     </h2>
                   </div>
@@ -355,7 +355,7 @@
                   <div class="sunlight">
                     <h1 class="weather-look">UV INDEX</h1>
                     <h1 class="today-temp">
-                      <span id="uv" class="chai">--</span><span class="unit" id="unit"> mW/cm2</span>
+                      <span id="uv" class="chai"></span><span class="unit" id="unit"> mW/cm2</span>
                     </h1>
                     <!-- <h2 class='feels-like'>EXTREME</h2> -->
                     <!-- <h2 class='fl-temp'>EXTREME</h2> -->
@@ -386,7 +386,7 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Snow</h1>
                     <h1 class="today-temp">
-                      <span id="snow" class="chai">0</span>
+                      <span id="snow" class="chai"></span>
                       <span class="unit" id="unit">%</span>
                     </h1>
                     <h2 class="feels-like">
@@ -402,12 +402,12 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Gust</h1>
                     <h1 class="today-temp">
-                      <span id="gust" class="chai">23</span>
+                      <span id="gust" class="chai"></span>
                       <span class="unit" id="unit">kph</span>
                     </h1>
                     <h2 class="feels-like">in mph</h2>
                     <h2 class="fl-temp">
-                      <span id="gim" class="chai">--</span>
+                      <span id="gim" class="chai"></span>
                       <span class="m2 meridian">mph</span>
                     </h2>
                   </div>
@@ -419,12 +419,12 @@
                   <div class="sunlight">
                     <h1 class="weather-look">Precipitation</h1>
                     <h1 class="today-temp">
-                      <span id="precipitation" class="chai">jj</span>
+                      <span id="precipitation" class="chai"></span>
                       <span class="unit" id="unit">mm</span>
                     </h1>
                     <h2 class="feels-like"></h2>
                     <br />
-                    <!-- <h2 class='fl-temp'><span id='wind-degree'>--</span> <sup>o</sup><span class='m2 meridian' id='wind-direction'>--</span></h2> -->
+                    <!-- <h2 class='fl-temp'><span id='wind-degree'></span> <sup>o</sup><span class='m2 meridian' id='wind-direction'></span></h2> -->
                   </div>
                 </div>
               </div>
@@ -438,13 +438,18 @@
         </div>
       </div>
 <br>
-      <header id="fcity" class="chai">Hourly Forecast</header>
+      <header id="fcity" class="chai"><hr class="hr2"> Hourly Forecast <hr class="hr2"></header>
       <div class="hourly-forecast">
+        <div id="preloader">
+          <div id="one"></div><br>
+          <div id="two"></div><br>
+          <div id="three"></div>
+        </div>
         <div class="slide" id="slide">
           <div class="carrier">
             <div class="h-forecast">
               <h1 class="chai">12 AM</h1>
-              <img id="hourly-weather-condition" src="./IMAGES/temperature.png" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
@@ -614,441 +619,10 @@
         </div>
       </div>
 
-      <header id="fcity" class="chai kl">7 Days Forecast</header>
+      <header id="fcity" class="chai kl"><hr class="hr2"> 7 Days Forecast <hr class="hr2"></header>
       <div class="hourly-forecast" id="h-f">
         <div class="slide" id="slide">
           <div class="carrier" id="day_carrier">
-            <div class='df h-forecast' id='day-box'>
-              <div class="card-topp">
-                <span id='sm-date'>25 May 2022</span>
-              <span class='see-all-2' id='see-all-2'>See more</span>
-              <div class='card-top'>
-                <img src='./IMAGES/icons8-sunrise-100.png'>
-                <p id='d_weather_desc'>Partly sunny</p>
-              </div>
-              <p class='day' id="day"><span id='day-2'>Thursday</span></p>
-              </div>
-              
-              <div class='holder2'>
-                <div class='day-info' id='ss'>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunrise</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunrise-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunset</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunset-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonrise</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png'>
-                    <h1 class='rating'><span id='moonrise-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonset</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png' >
-                    <h1 class='rating'><span id='moonset-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Temperature</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='min-temp-2'></span> - <span id='max-temp-2'></span><sup> o</sup><span
-                        id='unit2'>C</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind</h1>
-                    <img src='./IMAGES/icons8-wind-98.png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><sup> o</sup><span id='unit2'>N</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind Gust</h1>
-                    <img src='./IMAGES/icons8-wind-60(1).png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><span id='unit2'> mph</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Humidity</h1>
-                    <img src='./IMAGES/icons8-humidity-96.png' id="rimg">
-                    <h1 class='rating'><span id='humidity-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Precipitation</h1>
-                    <img src='./IMAGES/icons8-rain-gauge-100.png' id="rimg">
-                    <h1 class='rating'><span id='precipitation-2'></span><span id='unit2'> mm</span>
-                    </h1>
-                  </div>
-
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Rainfall</h1>
-                    <img src='./IMAGES/icons8-rain-80.png' id="rimg">
-                    <h1 class='rating'><span id='rainfall-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Pressure</h1>
-                    <img src='./IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
-                    <h1 class='rating'><span id='pressure-2'></span><span id='unit2'> hPa</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Visibility</h1>
-                    <img src='./IMAGES/icons8-eye-99.png' id="rimg">
-                    <h1 class='rating'><span id='visibility-2'></span><span id='unit2'> km</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Depth</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-depth-2'></span><span id='unit2'> cm</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Chances</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-chances-2'></span><span id='unit2'> %</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>UV</h1>
-                    <img src='./IMAGES/icons8-uv-index-64.png' id="rimg">
-                    <h1 class='rating'><span id='uv-2'></span><span id='unit2'> mW/cm2</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Dew Point</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='dew-point-2'></span><span id='unit2'> o</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name inv'>r</h1>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='df h-forecast' id='day-box'>
-              <div class="card-topp">
-                <span id='sm-date'>25 May 2022</span>
-              <span class='see-all-2' id='see-all-2'>See more</span>
-              <div class='card-top'>
-                <img src='./IMAGES/icons8-sunrise-100.png'>
-                <p id='d_weather_desc'>Partly sunny</p>
-              </div>
-              <p class='day' id="day"><span id='day-2'>Thursday</span></p>
-              </div>
-              
-              <div class='holder2'>
-                <div class='day-info' id='ss'>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunrise</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunrise-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunset</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunset-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonrise</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png'>
-                    <h1 class='rating'><span id='moonrise-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonset</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png' >
-                    <h1 class='rating'><span id='moonset-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Temperature</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='min-temp-2'></span> - <span id='max-temp-2'></span><sup> o</sup><span
-                        id='unit2'>C</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind</h1>
-                    <img src='./IMAGES/icons8-wind-98.png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><sup> o</sup><span id='unit2'>N</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind Gust</h1>
-                    <img src='./IMAGES/icons8-wind-60(1).png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><span id='unit2'> mph</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Humidity</h1>
-                    <img src='./IMAGES/icons8-humidity-96.png' id="rimg">
-                    <h1 class='rating'><span id='humidity-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Precipitation</h1>
-                    <img src='./IMAGES/icons8-rain-gauge-100.png' id="rimg">
-                    <h1 class='rating'><span id='precipitation-2'></span><span id='unit2'> mm</span>
-                    </h1>
-                  </div>
-
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Rainfall</h1>
-                    <img src='./IMAGES/icons8-rain-80.png' id="rimg">
-                    <h1 class='rating'><span id='rainfall-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Pressure</h1>
-                    <img src='./IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
-                    <h1 class='rating'><span id='pressure-2'></span><span id='unit2'> hPa</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Visibility</h1>
-                    <img src='./IMAGES/icons8-eye-99.png' id="rimg">
-                    <h1 class='rating'><span id='visibility-2'></span><span id='unit2'> km</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Depth</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-depth-2'></span><span id='unit2'> cm</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Chances</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-chances-2'></span><span id='unit2'> %</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>UV</h1>
-                    <img src='./IMAGES/icons8-uv-index-64.png' id="rimg">
-                    <h1 class='rating'><span id='uv-2'></span><span id='unit2'> mW/cm2</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Dew Point</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='dew-point-2'></span><span id='unit2'> o</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name inv'>r</h1>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='df h-forecast' id='day-box'>
-              <div class="card-topp">
-                <span id='sm-date'>25 May 2022</span>
-              <span class='see-all-2' id='see-all-2'>See more</span>
-              <div class='card-top'>
-                <img src='./IMAGES/icons8-sunrise-100.png'>
-                <p id='d_weather_desc'>Partly sunny</p>
-              </div>
-              <p class='day' id="day"><span id='day-2'>Thursday</span></p>
-              </div>
-              
-              <div class='holder2'>
-                <div class='day-info' id='ss'>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunrise</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunrise-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunset</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunset-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonrise</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png'>
-                    <h1 class='rating'><span id='moonrise-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonset</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png' >
-                    <h1 class='rating'><span id='moonset-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Temperature</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='min-temp-2'></span> - <span id='max-temp-2'></span><sup> o</sup><span
-                        id='unit2'>C</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind</h1>
-                    <img src='./IMAGES/icons8-wind-98.png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><sup> o</sup><span id='unit2'>N</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind Gust</h1>
-                    <img src='./IMAGES/icons8-wind-60(1).png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><span id='unit2'> mph</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Humidity</h1>
-                    <img src='./IMAGES/icons8-humidity-96.png' id="rimg">
-                    <h1 class='rating'><span id='humidity-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Precipitation</h1>
-                    <img src='./IMAGES/icons8-rain-gauge-100.png' id="rimg">
-                    <h1 class='rating'><span id='precipitation-2'></span><span id='unit2'> mm</span>
-                    </h1>
-                  </div>
-
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Rainfall</h1>
-                    <img src='./IMAGES/icons8-rain-80.png' id="rimg">
-                    <h1 class='rating'><span id='rainfall-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Pressure</h1>
-                    <img src='./IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
-                    <h1 class='rating'><span id='pressure-2'></span><span id='unit2'> hPa</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Visibility</h1>
-                    <img src='./IMAGES/icons8-eye-99.png' id="rimg">
-                    <h1 class='rating'><span id='visibility-2'></span><span id='unit2'> km</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Depth</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-depth-2'></span><span id='unit2'> cm</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Chances</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-chances-2'></span><span id='unit2'> %</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>UV</h1>
-                    <img src='./IMAGES/icons8-uv-index-64.png' id="rimg">
-                    <h1 class='rating'><span id='uv-2'></span><span id='unit2'> mW/cm2</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Dew Point</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='dew-point-2'></span><span id='unit2'> o</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name inv'>r</h1>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='df h-forecast' id='day-box'>
-              <div class="card-topp">
-                <span id='sm-date'>25 May 2022</span>
-              <span class='see-all-2' id='see-all-2'>See more</span>
-              <div class='card-top'>
-                <img src='./IMAGES/icons8-sunrise-100.png'>
-                <p id='d_weather_desc'>Partly sunny</p>
-              </div>
-              <p class='day' id="day"><span id='day-2'>Thursday</span></p>
-              </div>
-              
-              <div class='holder2'>
-                <div class='day-info' id='ss'>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunrise</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunrise-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Sunset</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png'>
-                    <h1 class='rating'><span id='sunset-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonrise</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png'>
-                    <h1 class='rating'><span id='moonrise-2'></span><span id='unit2'> PM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Moonset</h1>
-                    <img src='./IMAGES/icons8-moonrise-80.png' >
-                    <h1 class='rating'><span id='moonset-2'></span><span id='unit2'> AM</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Temperature</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='min-temp-2'></span> - <span id='max-temp-2'></span><sup> o</sup><span
-                        id='unit2'>C</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind</h1>
-                    <img src='./IMAGES/icons8-wind-98.png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><sup> o</sup><span id='unit2'>N</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Wind Gust</h1>
-                    <img src='./IMAGES/icons8-wind-60(1).png' id="rimg">
-                    <h1 class='rating'><span id='wind-2'></span><span id='unit2'> mph</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Humidity</h1>
-                    <img src='./IMAGES/icons8-humidity-96.png' id="rimg">
-                    <h1 class='rating'><span id='humidity-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Precipitation</h1>
-                    <img src='./IMAGES/icons8-rain-gauge-100.png' id="rimg">
-                    <h1 class='rating'><span id='precipitation-2'></span><span id='unit2'> mm</span>
-                    </h1>
-                  </div>
-
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Rainfall</h1>
-                    <img src='./IMAGES/icons8-rain-80.png' id="rimg">
-                    <h1 class='rating'><span id='rainfall-2'></span><span id='unit2'> %</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Pressure</h1>
-                    <img src='./IMAGES/icons8-atmospheric-pressure-100.png' id="rimg">
-                    <h1 class='rating'><span id='pressure-2'></span><span id='unit2'> hPa</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Visibility</h1>
-                    <img src='./IMAGES/icons8-eye-99.png' id="rimg">
-                    <h1 class='rating'><span id='visibility-2'></span><span id='unit2'> km</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Depth</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-depth-2'></span><span id='unit2'> cm</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Snow Chances</h1>
-                    <img src='./IMAGES/icons8-snow-80.png' id="rimg">
-                    <h1 class='rating'><span id='show-chances-2'></span><span id='unit2'> %</span>
-                    </h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>UV</h1>
-                    <img src='./IMAGES/icons8-uv-index-64.png' id="rimg">
-                    <h1 class='rating'><span id='uv-2'></span><span id='unit2'> mW/cm2</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name'>Dew Point</h1>
-                    <img src='./IMAGES/icons8-sunrise-100.png' id="rimg">
-                    <h1 class='rating'><span id='dew-point-2'></span><span id='unit2'> o</span></h1>
-                  </div>
-                  <div class='range' id='range'>
-                    <h1 class='day-name inv'>r</h1>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            
-            
             </div>
           </div>
 

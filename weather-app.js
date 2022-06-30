@@ -1,5 +1,7 @@
 "use strict";
 
+document.getElementById("slide").style.display = "none"
+
 let currentTime = document.getElementById("today-time"),
   currentDate = document.getElementById("today-date"),
   current__city = document.getElementById("usercity"),
@@ -102,11 +104,11 @@ function citiesTimeCollector(city, ID, indicator) {
   }, 300000);
 }
 
-// citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
-// citiesTimeCollector("London", "london", "l-indicator");
-// citiesTimeCollector("Budapest", "budapest", "b-indicator");
-// citiesTimeCollector("Paris", "paris", "p-indicator");
-// citiesTimeCollector("Chicago", "chicago", "c-indicator");
+citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
+citiesTimeCollector("London", "london", "l-indicator");
+citiesTimeCollector("Budapest", "budapest", "b-indicator");
+citiesTimeCollector("Paris", "paris", "p-indicator");
+citiesTimeCollector("Chicago", "chicago", "c-indicator");
 
 let dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let dayArr2 = [
@@ -552,6 +554,8 @@ const loadupWeather = (city_selected) => {
 
           document.getElementById("pointer").scrollIntoView();
           document.getElementById("result-box").style.opacity = "0";
+          document.getElementById("preloader").style.display = "none";
+          document.getElementById("slide").style.display = "flex";
           setTimeout(()=>{
             document.getElementById("result-box").style.display = "none"
           },1000)
@@ -1145,7 +1149,7 @@ if (window.innerWidth <= 1199 && window.innerWidth > 960) {
   sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
 }
 
-if (window.innerWidth <= 960) {
+if (window.innerWidth <= 960 && window.innerWidth > 631) {
   document.getElementById("side-bar").style.width = "0%";
   document.getElementById("dashboard").style.width = "100%";
   big_logo.style.display = "none";
@@ -1165,7 +1169,7 @@ if (window.innerWidth > 475 && window.innerWidth <= 631) {
 }
 
 if (window.innerWidth <= 475) {
-  document.getElementById("side-bar").style.width = "30%";
+  document.getElementById("side-bar").style.width = "0%";
   document.getElementById("dashboard").style.width = "100%";
   big_logo.style.display = "none";
   small_logo.style.display = "none";
@@ -1213,6 +1217,15 @@ window.addEventListener("resize", (e) => {
     menu2.style.display = "none";
     sideBar.style.width = "0%";
     menu.style.left = "0%";
+    sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
+  }
+
+  if (window.innerWidth <= 475) {
+    document.getElementById("side-bar").style.width = "0%";
+    document.getElementById("dashboard").style.width = "100%";
+    big_logo.style.display = "none";
+    small_logo.style.display = "none";
+    menu2.style.display = "none";
     sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
   }
 });
@@ -1368,11 +1381,11 @@ document.getElementById("menn").addEventListener("click", (e) => {
   }
 
   if (window.innerWidth <= 475 && sideBar.style.width === "0%") {
-    sideBar.style.width = "50%";
+    sideBar.style.width = "80%";
     sideBar.style.boxShadow = "0px 0px 0px 1000px rgba(3, 5, 19, 0.317)";
     sideBar.style.display = "flex";
     dash_board.style.width = "100%";
-    event.target.style.left = "50%";
+    event.target.style.left = "80%";
     big_logo.style.display = "block";
     small_logo.style.display = "none";
     menu2.style.display = "flex";
@@ -1390,7 +1403,7 @@ document.getElementById("menn").addEventListener("click", (e) => {
     } catch (error) {
       console.log(error.message);
     }
-  } else if (window.innerWidth <= 475 && sideBar.style.width === "50%") {
+  } else if (window.innerWidth <= 475 && sideBar.style.width === "80%") {
     sideBar.style.width = "0%";
     sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
     sideBar.style.display = "block";
@@ -1425,6 +1438,15 @@ document.getElementById("menn").addEventListener("click", (e) => {
       console.log(error.message);
     }
   }
+
+
+
+
+
+
+
+
+
   window.addEventListener("resize", (e) => {
     if (window.innerWidth > 1199 && sideBar.style.width === "6%") {
       sideBar.style.width = "20%";
@@ -1462,13 +1484,15 @@ document.getElementById("menn").addEventListener("click", (e) => {
         console.log(error.message);
       }
     }
+
+    
     if (
       window.innerWidth > 631 &&
       window.innerWidth <= 960 &&
       sideBar.style.width === "0%"
     ) {
-      sideBar.style.width = "30%";
-      sideBar.style.boxShadow = "0px 0px 0px 1000px rgba(3, 5, 19, 0.317)";
+      sideBar.style.width = "0%";
+      sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
       sideBar.style.display = "block";
       dash_board.style.width = "100%";
       event.target.style.left = "100%";
@@ -1552,6 +1576,27 @@ document.getElementById("menn").addEventListener("click", (e) => {
       }
     }
 
+    if (
+      window.innerWidth <= 475
+    ) {
+      sideBar.style.width = "0%";
+      sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
+      sideBar.style.display = "block";
+      dash_board.style.width = "100%";
+      document.getElementById("menn").style.left = "0%";
+      big_logo.style.display = "none";
+      small_logo.style.display = "none";
+      current_time.style.display = "none";
+      menu2.style.display = "none";
+      try {
+        for (let mn in menu_details) {
+          menu_details[mn].style.display = "none";
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
     if (window.innerWidth > 1199) {
       sideBar.style.width = "15%";
       sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
@@ -1595,9 +1640,11 @@ function change(body_bg, white, lightdblue, lightgreen, dlightblue) {
     range = document.querySelectorAll(".range h1"),
     f_city = document.querySelectorAll(".fcity"),
     userpro = document.querySelector(".right"),
+    userpro2 = document.querySelector(".aright"),
     city__name = document.querySelectorAll(".city-name"),
     asteric = document.getElementsByTagName("*"),
     chai = document.querySelectorAll(".chai"),
+    seeall = document.querySelector(".see-all"),
     feels_like = document.querySelectorAll(".feels-like");
   body.style.backgroundColor = body_bg;
   body.style.animation = "fadein .4s ease-in";
@@ -1610,6 +1657,9 @@ function change(body_bg, white, lightdblue, lightgreen, dlightblue) {
   top.style.backgroundColor = body_bg;
   userpro.style.backgroundColor = lightgreen;
   userpro.style.border = "1px solid" + lightgreen;
+  userpro2.style.backgroundColor = lightgreen;
+  userpro2.style.border = "1px solid" + lightgreen;
+  seeall.style.backgroundColor = lightgreen;
 
   try {
     for (let jkk = 0; jkk <= 50; jkk++) {
