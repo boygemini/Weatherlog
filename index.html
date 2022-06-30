@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta https-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App | dashbord</title>
   <link rel="stylesheet" href="Weather-Styles.css" />
@@ -199,6 +199,7 @@
       </div>
 
       <h1 class="city chai" id="fcity">Current Weather</h1>
+      <span id="pointer"></span>
       <div class="weather-container">
         <div class="w-img">
           <div class="moredet">
@@ -232,11 +233,6 @@
         </div>
 
         <div class="w-readings">
-          <p class="see-all">
-            <span id="see-all">See less</span>
-            <img id="arrow" class="arrow"
-              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACUklEQVRoge2WMWgTURjH/98LyVAqFAvS6pIlF7HQsYvdBEVJ67vEUzu4OWi7dHOxm4ObFLRDB8HBKfYuKYVDoZI4OAjOaq7UQrPqIhJjufscgpKckaaXO/qQ95uOd+/7/t+Pu0seoBmMvHn1nlEyHyadk0qwN+WK8hGI7gOYPXkuP/H1xoKLWo0TCUui6ZRlZQ78n88AuhmKc4LWj4Ud123HnRm7yOm5uZHRTOoFGJf7bmBskx+YnzY3v8WZG6tIVsqxjOAtgM4fsvWdYLry0XG+xJUt4mo0ZVkTGYHaABIAMBOA3xhW4Uxc+bE8kbNSZn2BVwTkjli6l6LUxQ8bG96wMwz9RPKl+elA4G1YgoB6eG+ftazPfj1fmp8edo6hRAwpZ5jFawCTPTcIW99T6b8+dr/VvgSCHVqeZBZ1wzRnh5klsohxTV6AwDaA8e51Bj8/MX6q2CyXW+GaHddtN0T6OjOehm6NEfFLQ8r+v3QDEEkkZ5oFBHABjHavM2PVs6u33q+vH/yzuFz2PadymxmrPbXACASqOdMsRJkpkoggfgIgHRpkxXMqy53LQ2HPqSwzsBJaTxPx40gzRSliUPfRJgB4ybMrD47ap1PDS50ef4h0bIokElBwF8A+gF1mshp2dS1KHwBo2NU1ZrIA7ALYZ4g7Ufokctb6jVGUPa9Zw64klhfbP/txo0VUQ4uohhZRDS2iGlpENbSIamgR1dAiqqFFVEOLqIYWUQ0tohpaRDW0iGpoEdVIWmSv6/pzkkHJigRYBNAE0CSmxUSz/hd+AY+AqAgQQ8arAAAAAElFTkSuQmCC" />
-          </p>
           <div class="weather-scroll">
             <div class="holder" id="holder">
               <div class="top-cast">
@@ -432,6 +428,11 @@
                   </div>
                 </div>
               </div>
+              <p class="see-all">
+                <span id="see-all">See less</span>
+                <img id="arrow" class="arrow"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACUklEQVRoge2WMWgTURjH/98LyVAqFAvS6pIlF7HQsYvdBEVJ67vEUzu4OWi7dHOxm4ObFLRDB8HBKfYuKYVDoZI4OAjOaq7UQrPqIhJjufscgpKckaaXO/qQ95uOd+/7/t+Pu0seoBmMvHn1nlEyHyadk0qwN+WK8hGI7gOYPXkuP/H1xoKLWo0TCUui6ZRlZQ78n88AuhmKc4LWj4Ud123HnRm7yOm5uZHRTOoFGJf7bmBskx+YnzY3v8WZG6tIVsqxjOAtgM4fsvWdYLry0XG+xJUt4mo0ZVkTGYHaABIAMBOA3xhW4Uxc+bE8kbNSZn2BVwTkjli6l6LUxQ8bG96wMwz9RPKl+elA4G1YgoB6eG+ftazPfj1fmp8edo6hRAwpZ5jFawCTPTcIW99T6b8+dr/VvgSCHVqeZBZ1wzRnh5klsohxTV6AwDaA8e51Bj8/MX6q2CyXW+GaHddtN0T6OjOehm6NEfFLQ8r+v3QDEEkkZ5oFBHABjHavM2PVs6u33q+vH/yzuFz2PadymxmrPbXACASqOdMsRJkpkoggfgIgHRpkxXMqy53LQ2HPqSwzsBJaTxPx40gzRSliUPfRJgB4ybMrD47ap1PDS50ef4h0bIokElBwF8A+gF1mshp2dS1KHwBo2NU1ZrIA7ALYZ4g7Ufokctb6jVGUPa9Zw64klhfbP/txo0VUQ4uohhZRDS2iGlpENbSIamgR1dAiqqFFVEOLqIYWUQ0tohpaRDW0iGpoEdVIWmSv6/pzkkHJigRYBNAE0CSmxUSz/hd+AY+AqAgQQ8arAAAAAElFTkSuQmCC" />
+              </p>
             </div>
           </div>
         </div>
@@ -1059,9 +1060,10 @@
   <footer>
     <h2>
       Made by
-      <a href="https://" target="_blank" rel="noopener noreferrer">Jubril Bolajoko</a>
+      <a href="http://" target="_blank" rel="noopener noreferrer">Jubril Bolajoko</a>
     </h2>
   </footer>
+  <script src="/JAVASCRIPT/weather-app.js" defer></script>
   <script src="weather-app.js" defer></script>
 </body>
 

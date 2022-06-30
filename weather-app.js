@@ -69,39 +69,11 @@ document.getElementById("userloc").addEventListener("click", (e) => {
   }
 });
 
-// function citiesTimeCollector(city){
-//   const apiUrll = "http://api.weatherapi.com/v1/forecast.json?q=";
-//   const apiKeyy = "3b8b8609054e425bbdc33941220106";
-
-//   let timereq = new XMLHttpRequest();
-//   timereq.open("GET", `${apiUrll}${city}&key=${apiKeyy}`, false);
-//   timereq.onload = function () {
-//     if(timereq.status === 200){
-//       let timeCollect = JSON.parse(this.responseText);
-//         this.innerHTML = hours() + ":" + minutes();
-//         function minutes(){
-//           if(new Date(timeCollect.location.localtime_epoch).getMinutes() < 10){
-//             return "0" + new Date(timeCollect.location.localtime_epoch).getMinutes()
-//           }
-//         }
-
-//         function hours(){
-//           if(new Date(timeCollect.location.localtime_epoch).getHours() < 10){
-//             return "0" + new Date(timeCollect.location.localtime_epoch).getHours()
-//           }
-//         }
-//     }
-//   }
-//   timereq.send();
-// }
-
 function citiesTimeCollector(city, ID, indicator) {
   const apiUrll = "https://api.weatherapi.com/v1/forecast.json?q=";
   const apiKeyy = "3b8b8609054e425bbdc33941220106";
-  // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
   let timereq = new XMLHttpRequest();
   timereq.open("GET", `${apiUrll}${city}&key=${apiKeyy}`, false);
-  //   req.open('GET', `${apiUrl}`, false);
 
   timereq.onload = function () {
     if (timereq.status === 200) {
@@ -130,11 +102,11 @@ function citiesTimeCollector(city, ID, indicator) {
   }, 300000);
 }
 
-citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
-citiesTimeCollector("London", "london", "l-indicator");
-citiesTimeCollector("Budapest", "budapest", "b-indicator");
-citiesTimeCollector("Paris", "paris", "p-indicator");
-citiesTimeCollector("Chicago", "chicago", "c-indicator");
+// citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
+// citiesTimeCollector("London", "london", "l-indicator");
+// citiesTimeCollector("Budapest", "budapest", "b-indicator");
+// citiesTimeCollector("Paris", "paris", "p-indicator");
+// citiesTimeCollector("Chicago", "chicago", "c-indicator");
 
 let dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let dayArr2 = [
@@ -228,10 +200,8 @@ const loadupWeather = (city_selected) => {
     const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
     const apiKey = "3b8b8609054e425bbdc33941220106";
 
-    // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
     let req = new XMLHttpRequest();
     req.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
-    //   req.open('GET', `${apiUrl}`, false);
 
     req.onload = function () {
       let loader = document.getElementById("loader");
@@ -242,7 +212,7 @@ const loadupWeather = (city_selected) => {
         loader.style.display = "flex";
         loader.style.backgroundColor = "#18214b";
         loader.innerText =
-          "Error occourred, please check your internet connection";
+          "Sorry, we cannot locate such city. Please check your input.";
       }
 
       if (req.status === 200) {
@@ -329,6 +299,8 @@ const loadupWeather = (city_selected) => {
           "Scattered thunder",
           "Cloudy",
           "Overcast",
+          "Light drizzle",
+          "Moderate rain at times"
         ];
 
         const weatherConditionIcons = [
@@ -350,6 +322,8 @@ const loadupWeather = (city_selected) => {
           "./IMAGES/scattered-thunder.png",
           "./IMAGES/cloudy.png",
           "./IMAGES/overcast-clouds.png",
+          "./IMAGES/light-drizzle.png",
+          "./IMAGES/moderate-rain.png",
         ];
 
         try {
@@ -359,13 +333,18 @@ const loadupWeather = (city_selected) => {
             );
             let outputer = result.forecast.forecastday[0].hour[k].temp_c;
             w_hour_temp[k].innerText = outputer;
-            for (let ikd = 0; ikd <= 13; ikd++) {
+            for (let ikd = 0; ikd <= weatherCondition.length; ikd++) {
               console.log(
                 result.forecast.forecastday[0].hour[k].condition.text
               );
+              if(result.forecast.forecastday[0].hour[k].condition.text != weatherCondition[ikd]){
+                hourlyWeatherCondition[k].src = "./IMAGES/cloudd.png";
+              }
+            }
+
               if (
                 result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[0]
+                weatherCondition[0] 
               ) {
                 hourlyWeatherCondition[k].src = weatherConditionIcons[0];
               }
@@ -471,7 +450,18 @@ const loadupWeather = (city_selected) => {
               ) {
                 hourlyWeatherCondition[k].src = weatherConditionIcons[17];
               }
-            }
+              if (
+                result.forecast.forecastday[0].hour[k].condition.text ==
+                weatherCondition[18]
+              ) {
+                hourlyWeatherCondition[k].src = weatherConditionIcons[18];
+              }
+              if (
+                result.forecast.forecastday[0].hour[k].condition.text ==
+                weatherCondition[19]
+              ) {
+                hourlyWeatherCondition[k].src = weatherConditionIcons[19];
+              }
           }
         } catch (error) {
           console.log(error.message);
@@ -559,6 +549,12 @@ const loadupWeather = (city_selected) => {
           current_date.getDate() +
           " " +
           monArr[current_date.getMonth()];
+
+          document.getElementById("pointer").scrollIntoView();
+          document.getElementById("result-box").style.opacity = "0";
+          setTimeout(()=>{
+            document.getElementById("result-box").style.display = "none"
+          },1000)
       }
     };
 
@@ -606,7 +602,8 @@ const loadupWeather = (city_selected) => {
               "Patchy rain with thunder",
               "Scattered thunder",
               "Cloudy",
-              "Overcast clouds"
+              "Overcast clouds",
+              "Light drizzle"
             ];
 
             const weatherConditionIcons = [
@@ -625,6 +622,7 @@ const loadupWeather = (city_selected) => {
               "./IMAGES/scattered-thunder.png",
               "./IMAGES/cloudy.png",
               "./IMAGES/overcast-clouds.png",
+              "./IMAGES/light-drizzle.png",
             ];
 
             function Icons() {
@@ -703,6 +701,12 @@ const loadupWeather = (city_selected) => {
                 dayOutput.data[ck].weather.description == weatherCondition[14]
               ) {
                 return weatherConditionIcons[14];
+              }
+
+              if (
+                dayOutput.data[ck].weather.description == weatherCondition[15]
+              ) {
+                return weatherConditionIcons[15];
               }
             }
 
@@ -882,10 +886,8 @@ const loadupWeather = (city_selected) => {
             const apiUrl = "https://api.weatherapi.com/v1/forecast.json?q=";
             const apiKey = "3b8b8609054e425bbdc33941220106";
 
-            // const apiUrl = 'http://127.0.0.1:5500./testapi.json';
             let reqq = new XMLHttpRequest();
             reqq.open("GET", `${apiUrl}${city}&key=${apiKey}`, false);
-            //   req.open('GET', `${apiUrl}`, false);
 
             reqq.onload = function () {
               if (reqq.status === 200) {
