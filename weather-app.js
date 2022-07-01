@@ -279,12 +279,13 @@ const loadupWeather = (city_selected) => {
             "#5d77c7",
             "#17bcb4ba",
             "#17bcb4",
-            "#53d1cb"
+            "#53d1cb",
+            "1.5px solid"
           );
         }
 
         if (isDay === 1) {
-          change("", "", "", "", "", "", "");
+          change("", "", "", "", "", "", "","");
         }
 
         if (meridian < 12) {
@@ -1634,7 +1635,8 @@ function change(
   lightdblue,
   lightgreen,
   boldergreen,
-  dlightblue
+  dlightblue,
+  bordering
 ) {
   let body = document.getElementById("body");
   let weatherlk = document.querySelectorAll(".weather-look"),
@@ -1673,9 +1675,9 @@ function change(
   lcpp.style.backgroundColor = boldergreen;
   top.style.backgroundColor = body_bg;
   userpro.style.backgroundColor = boldergreen;
-  userpro.style.border = "1.5px solid" + lightgreen;
+  userpro.style.border = bordering + lightgreen;
   userpro2.style.backgroundColor = lightgreen;
-  userpro2.style.border = "1.5px solid" + boldergreen;
+  userpro2.style.border = bordering + boldergreen;
   seeall.style.backgroundColor = lightgreen;
 
   try {
