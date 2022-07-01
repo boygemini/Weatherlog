@@ -280,12 +280,13 @@ const loadupWeather = (city_selected) => {
             "#17bcb4ba",
             "#17bcb4",
             "#53d1cb",
-            "1.5px solid"
+            "1.5px solid",
+            "#17bcb415"
           );
         }
 
         if (isDay === 1) {
-          change("", "", "", "", "", "", "","");
+          change("", "", "", "", "", "", "","","");
         }
 
         if (meridian < 12) {
@@ -1636,7 +1637,8 @@ function change(
   lightgreen,
   boldergreen,
   dlightblue,
-  bordering
+  bordering,
+  deepgreen
 ) {
   let body = document.getElementById("body");
   let weatherlk = document.querySelectorAll(".weather-look"),
@@ -1670,15 +1672,16 @@ function change(
   lcpp.style.borderColor = lightgreen;
   lci.style.color = white;
 
-  GOO.style.backgroundColor = boldergreen;
-  GOO.style.color = sddark;
+  GOO.style.backgroundColor = sddark;
+  GOO.style.color = boldergreen;
   lcpp.style.backgroundColor = boldergreen;
-  top.style.backgroundColor = body_bg;
+  top.style.backgroundColor = boldergreen;
   userpro.style.backgroundColor = boldergreen;
   userpro.style.border = bordering + lightgreen;
   userpro2.style.backgroundColor = lightgreen;
   userpro2.style.border = bordering + boldergreen;
   seeall.style.backgroundColor = lightgreen;
+  document.getElementById("weather-scroll").style.backgroundColor = deepgreen;
 
   try {
     for (let jkk = 0; jkk <= 50; jkk++) {
