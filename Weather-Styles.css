@@ -560,12 +560,6 @@ header {
     display: flex;
     width: 100%;
     column-gap: 30px;
-    scroll-snap-type: x mandatory;
-    scroll-snap-points-x: repeat(200px);
-}
-
-#select{
-    scroll-snap-align: start;
 }
 
 .box {
@@ -574,7 +568,6 @@ header {
     /* transform: translateY(5px); */
     transition: all .3s ease-out;
     cursor: pointer;
-    scroll-snap-align: center;
 }
 
 .imgs:hover {
@@ -1978,11 +1971,9 @@ a {
         column-gap: 15px;
         height: 100%;
         width: 800px;
-        scroll-snap-type: x mandatory;
     }
     .box {
         height: 200px;
-        scroll-snap-align: center;
     }
 
     .shade{
@@ -2460,16 +2451,12 @@ a {
         width: 100%;
         height: 200px;
         box-shadow: none;
-        scroll-snap-align: center;
     }
 
     .five-imgs{
         column-gap: 15px;
         height: 100%;
         width: 800px;
-        overflow-x: scroll;
-        scroll-snap-type: x proximity;
-        scroll-snap-points-y: repeat(30px);
     }
 
     .shade{
