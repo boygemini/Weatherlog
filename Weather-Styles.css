@@ -620,8 +620,8 @@ header {
     width: 80px;
     height: 40px;
     padding: 5px 10px;
-    bottom: 0;
-    right: 0;
+    bottom: 2px;
+    right: 2px;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
