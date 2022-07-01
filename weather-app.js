@@ -104,11 +104,11 @@ function citiesTimeCollector(city, ID, indicator) {
   }, 300000);
 }
 
-// citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
-// citiesTimeCollector("London", "london", "l-indicator");
-// citiesTimeCollector("Budapest", "budapest", "b-indicator");
-// citiesTimeCollector("Paris", "paris", "p-indicator");
-// citiesTimeCollector("Chicago", "chicago", "c-indicator");
+citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
+citiesTimeCollector("London", "london", "l-indicator");
+citiesTimeCollector("Budapest", "budapest", "b-indicator");
+citiesTimeCollector("Paris", "paris", "p-indicator");
+citiesTimeCollector("Chicago", "chicago", "c-indicator");
 
 let dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let dayArr2 = [
