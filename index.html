@@ -52,8 +52,8 @@
               </div>
               <div class="cur-location">
                 <h1><span id="usertemp"></span><sup>°</sup>C</h1>
-                <h2 id="usercity">New York</h2>
-                <p id="usercountry">United States</p>
+                <h2 id="usercity">Your location</h2>
+                <p id="usercountry">Country</p>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
           <div class="left" id="loadd">
             <div class="left-con" >
               <p class="lcp" id="lcp"><img  src="./IMAGES/icons8-user-location-64.png" width="30px" height="30px" id="userloc" alt="" srcset=""></p>
-              <input type="text" placeholder="Enter a city name" id="load" autocomplete="off" />
+              <input type="text" placeholder="Enter a city name" id="load" autocomplete="off" /><button id="GO" onclick="loadupWeather()">Go</button>
             </div>
             <div id="result-box">
               <ul id="resul"></ul>
@@ -192,44 +192,46 @@
                   </div>
                 </div>
               </div>
-              <p class="city-name" id="city-name">Chicago</p>
+              <p class="city-name" id="city-name"><span id="pointer"></span>Chicago</p>
             </div>
           </div>
         </div>
       </div>
-
+      
       <h1 class="city chai" id="fcity"><hr class="hr2"> Current Weather <hr class="hr2"></h1>
-      <span id="pointer"></span>
+      
       <div class="weather-container">
         <div class="w-img">
-          <div class="moredet">
-            <!-- <div class="oploc">
-              <img src="./IMAGES/icons8-user-location-64.png" alt="">
-              <div class="loc">
-                <h1>London</h1>
-              <p>England</p>
+            <div id="bigshade">
+              <div class="moredet">
+                <!-- <div class="oploc">
+                  <img src="./IMAGES/icons8-user-location-64.png" alt="">
+                  <div class="loc">
+                    <h1>London</h1>
+                  <p>England</p>
+                  </div>
+                </div> -->
+                <div class="ttt">
+                  <img id="weather-icon" src="./IMAGES/icons8-sun-100.png" alt="">
+                  
+                  <h1><span id="ft"></span> <span id="fts"><sup id="ftn">O</sup>C</span></h1>
+                </div>
+                <div class="tit" id="tit">Partly cloudy</div>
               </div>
-            </div> -->
-            <div class="ttt">
-              <img id="weather-icon" src="./IMAGES/icons8-sun-100.png" alt="">
-              
-              <h1><span id="ft"></span> <span id="fts"><sup id="ftn">O</sup>C</span></h1>
+              <div class="shade2">
+                <div class="city-input">
+                  <h1 id="city">London</h1>
+                  <p id="country">England</p>
+                </div>
+                <div class="bb">
+                  <h1 id="hh">
+                    <span class="lt" id="local-time">11:33</span>
+                    <span class="meridian" id="meridian"></span>
+                  </h1>
+                  <p id="date">Mon, 11 January</p>
+                </div>
+              </div>
             </div>
-            <div class="tit" id="tit">Partly cloudy</div>
-          </div>
-          <div class="shade2">
-            <div class="city-input">
-              <h1 id="city">London</h1>
-              <p id="country">England</p>
-            </div>
-            <div>
-              <h1 id="hh">
-                <span class="lt" id="local-time">11:33</span>
-                <span class="meridian" id="meridian"></span>
-              </h1>
-              <p id="date">Mon, 11 January</p>
-            </div>
-          </div>
         </div>
 
         <div class="w-readings">

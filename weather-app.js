@@ -1,6 +1,6 @@
 "use strict";
 
-document.getElementById("slide").style.display = "none"
+document.getElementById("slide").style.display = "none";
 
 let currentTime = document.getElementById("today-time"),
   currentDate = document.getElementById("today-date"),
@@ -104,11 +104,11 @@ function citiesTimeCollector(city, ID, indicator) {
   }, 300000);
 }
 
-citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
-citiesTimeCollector("London", "london", "l-indicator");
-citiesTimeCollector("Budapest", "budapest", "b-indicator");
-citiesTimeCollector("Paris", "paris", "p-indicator");
-citiesTimeCollector("Chicago", "chicago", "c-indicator");
+// citiesTimeCollector("Amsterdam", "amsterdam", "a-indicator");
+// citiesTimeCollector("London", "london", "l-indicator");
+// citiesTimeCollector("Budapest", "budapest", "b-indicator");
+// citiesTimeCollector("Paris", "paris", "p-indicator");
+// citiesTimeCollector("Chicago", "chicago", "c-indicator");
 
 let dayArr = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let dayArr2 = [
@@ -180,6 +180,11 @@ if (localTime.getHours() < 12) {
 } else {
   c_meridian.innerText = "PM";
 }
+
+document.getElementById("GO").addEventListener("click", (e) => {
+  let cityInput = document.getElementById("load").value;
+  loadupWeather(cityInput);
+});
 
 const loadupWeather = (city_selected) => {
   let loader = document.getElementById("loader");
@@ -267,11 +272,19 @@ const loadupWeather = (city_selected) => {
           otherTime = result.current.localtime_epoch;
 
         if (isDay === 0) {
-          change("#060813", "#ffffffc0", "#5d77c7", "#17bcb4ba", "#53d1cb");
+          change(
+            "#060813",
+            "#18214b",
+            "#ffffffc0",
+            "#5d77c7",
+            "#17bcb4ba",
+            "#17bcb4",
+            "#53d1cb"
+          );
         }
 
         if (isDay === 1) {
-          change("", "", "", "", "");
+          change("", "", "", "", "", "", "");
         }
 
         if (meridian < 12) {
@@ -302,7 +315,7 @@ const loadupWeather = (city_selected) => {
           "Cloudy",
           "Overcast",
           "Light drizzle",
-          "Moderate rain at times"
+          "Moderate rain at times",
         ];
 
         const weatherConditionIcons = [
@@ -339,131 +352,134 @@ const loadupWeather = (city_selected) => {
               console.log(
                 result.forecast.forecastday[0].hour[k].condition.text
               );
-              if(result.forecast.forecastday[0].hour[k].condition.text != weatherCondition[ikd]){
+              if (
+                result.forecast.forecastday[0].hour[k].condition.text !=
+                weatherCondition[ikd]
+              ) {
                 hourlyWeatherCondition[k].src = "./IMAGES/cloudd.png";
               }
             }
 
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[0] 
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[0];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[1]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[1];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[2]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[2];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[3]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[3];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[4]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[4];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[5]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[5];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[6]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[6];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[7]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[7];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[8]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[8];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[9]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[9];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[10]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[10];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[11]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[11];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[12]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[12];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[13]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[13];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[14]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[14];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[15]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[15];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[16]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[16];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[17]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[17];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[18]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[18];
-              }
-              if (
-                result.forecast.forecastday[0].hour[k].condition.text ==
-                weatherCondition[19]
-              ) {
-                hourlyWeatherCondition[k].src = weatherConditionIcons[19];
-              }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[0]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[0];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[1]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[1];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[2]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[2];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[3]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[3];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[4]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[4];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[5]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[5];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[6]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[6];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[7]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[7];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[8]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[8];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[9]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[9];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[10]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[10];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[11]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[11];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[12]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[12];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[13]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[13];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[14]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[14];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[15]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[15];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[16]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[16];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[17]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[17];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[18]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[18];
+            }
+            if (
+              result.forecast.forecastday[0].hour[k].condition.text ==
+              weatherCondition[19]
+            ) {
+              hourlyWeatherCondition[k].src = weatherConditionIcons[19];
+            }
           }
         } catch (error) {
           console.log(error.message);
@@ -552,13 +568,13 @@ const loadupWeather = (city_selected) => {
           " " +
           monArr[current_date.getMonth()];
 
-          document.getElementById("pointer").scrollIntoView();
-          document.getElementById("result-box").style.opacity = "0";
-          document.getElementById("preloader").style.display = "none";
-          document.getElementById("slide").style.display = "flex";
-          setTimeout(()=>{
-            document.getElementById("result-box").style.display = "none"
-          },1000)
+        document.getElementById("pointer").scrollIntoView();
+        document.getElementById("result-box").style.opacity = "0";
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("slide").style.display = "flex";
+        setTimeout(() => {
+          document.getElementById("result-box").style.display = "none";
+        }, 1000);
       }
     };
 
@@ -607,7 +623,7 @@ const loadupWeather = (city_selected) => {
               "Scattered thunder",
               "Cloudy",
               "Overcast clouds",
-              "Light drizzle"
+              "Light drizzle",
             ];
 
             const weatherConditionIcons = [
@@ -1440,14 +1456,6 @@ document.getElementById("menn").addEventListener("click", (e) => {
     }
   }
 
-
-
-
-
-
-
-
-
   window.addEventListener("resize", (e) => {
     if (window.innerWidth > 1199 && sideBar.style.width === "6%") {
       sideBar.style.width = "20%";
@@ -1486,7 +1494,6 @@ document.getElementById("menn").addEventListener("click", (e) => {
       }
     }
 
-    
     if (
       window.innerWidth > 631 &&
       window.innerWidth <= 960 &&
@@ -1577,9 +1584,7 @@ document.getElementById("menn").addEventListener("click", (e) => {
       }
     }
 
-    if (
-      window.innerWidth <= 475
-    ) {
+    if (window.innerWidth <= 475) {
       sideBar.style.width = "0%";
       sideBar.style.boxShadow = "0px 0px 0px 0px rgba(3, 5, 19, 0.317)";
       sideBar.style.display = "block";
@@ -1622,14 +1627,22 @@ document.getElementById("menn").addEventListener("click", (e) => {
   });
 });
 
-function change(body_bg, white, lightdblue, lightgreen, dlightblue) {
+function change(
+  body_bg,
+  sddark,
+  white,
+  lightdblue,
+  lightgreen,
+  boldergreen,
+  dlightblue
+) {
   let body = document.getElementById("body");
   let weatherlk = document.querySelectorAll(".weather-look"),
     today_temp_ = document.querySelectorAll(".today-temp"),
     meridian_ = document.querySelectorAll(".meridian"),
     meridian3_ = document.querySelectorAll(".otime"),
     meridian2_ = document.querySelectorAll(".m2"),
-    lci_ = document.getElementById("load"),
+    lci = document.getElementById("load"),
     lcpp = document.querySelector(".lcp"),
     top = document.querySelector(".topper"),
     unit_ = document.querySelectorAll("#unit"),
@@ -1646,22 +1659,24 @@ function change(body_bg, white, lightdblue, lightgreen, dlightblue) {
     asteric = document.getElementsByTagName("*"),
     chai = document.querySelectorAll(".chai"),
     seeall = document.querySelector(".see-all"),
+    GOO = document.getElementById("GO"),
     feels_like = document.querySelectorAll(".feels-like");
   body.style.backgroundColor = body_bg;
   body.style.animation = "fadein .4s ease-in";
   body.style.transition = "all .4s ease-in";
 
   lcpp.style.borderColor = lightgreen;
-  lci_.style.borderColor = lightgreen;
-  lci_.style.color = "white";
-  lcpp.style.backgroundColor = lightgreen;
+  lci.style.color = white;
+
+  GOO.style.backgroundColor = boldergreen;
+  GOO.style.color = sddark;
+  lcpp.style.backgroundColor = boldergreen;
   top.style.backgroundColor = body_bg;
-  userpro.style.backgroundColor = lightgreen;
+  userpro.style.backgroundColor = boldergreen;
   userpro.style.border = "1.5px solid" + lightgreen;
   userpro2.style.backgroundColor = lightgreen;
-  userpro2.style.border = "1.5px solid" + lightgreen;
+  userpro2.style.border = "1.5px solid" + boldergreen;
   seeall.style.backgroundColor = lightgreen;
-  document.getElementById("loadd").style.border = "1.5px solid" + lightgreen;
 
   try {
     for (let jkk = 0; jkk <= 50; jkk++) {
