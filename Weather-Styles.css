@@ -554,12 +554,20 @@ header {
 }
 .overflow{
     margin-top: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: repeat(200px);
 }
 
 .five-imgs {
     display: flex;
     width: 100%;
     column-gap: 30px;
+    scroll-snap-type: x mandatory;
+    scroll-snap-type: repeat(200px);
+}
+
+#select{
+    scroll-snap-align: center;
 }
 
 .box {
