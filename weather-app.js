@@ -261,7 +261,7 @@ const loadupWeather = (city_selected) => {
           gustinmiles = result.current.gust_mph,
           precipitation = result.current.precip_mm,
           uv = result.current.uv,
-          current_date = new Date(result.location.localtime),
+          current_date = new Date(`${result.location.localtime}`),
           meridian = current_date.getHours(),
           isDay = result.current.is_day,
           otherTime = result.current.localtime_epoch;
@@ -602,7 +602,7 @@ const loadupWeather = (city_selected) => {
               "Thunderstorm with rain",
               "Thunderstorm with heavy rain",
               "Broken clouds",
-              "Light rain shower",
+              "Light shower rain",
               "Patchy rain with thunder",
               "Scattered thunder",
               "Cloudy",
@@ -623,6 +623,7 @@ const loadupWeather = (city_selected) => {
               "./IMAGES/thunderstorm-with-heavy-rain.png",
               "./IMAGES/broken-clouds.png",
               "./IMAGES/light-rain-shower.png",
+              "./IMAGES/patchy-rain-with-thunder.png",
               "./IMAGES/scattered-thunder.png",
               "./IMAGES/cloudy.png",
               "./IMAGES/overcast-clouds.png",
@@ -1652,14 +1653,15 @@ function change(body_bg, white, lightdblue, lightgreen, dlightblue) {
 
   lcpp.style.borderColor = lightgreen;
   lci_.style.borderColor = lightgreen;
-  lci_.style.color = white;
+  lci_.style.color = "white";
   lcpp.style.backgroundColor = lightgreen;
   top.style.backgroundColor = body_bg;
   userpro.style.backgroundColor = lightgreen;
-  userpro.style.border = "1px solid" + lightgreen;
+  userpro.style.border = "1.5px solid" + lightgreen;
   userpro2.style.backgroundColor = lightgreen;
-  userpro2.style.border = "1px solid" + lightgreen;
+  userpro2.style.border = "1.5px solid" + lightgreen;
   seeall.style.backgroundColor = lightgreen;
+  document.getElementById("loadd").style.border = "1.5px solid" + lightgreen;
 
   try {
     for (let jkk = 0; jkk <= 50; jkk++) {
