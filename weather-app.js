@@ -1048,10 +1048,6 @@ document.getElementById("load").addEventListener("keydown", (e) => {
   }
 });
 
-// document.getElementById('select').addEventListener('click', (e)=>{
-//     loadupWeather('lagos')
-// })
-
 //SEE ALL - SEE LESS BUTTON
 let moreee = document.getElementById("more");
 let line = document.querySelectorAll("#hr");
@@ -1060,7 +1056,7 @@ for (let i = 0; i <= line.length; i++) {
 }
 moreee.style.display = "flex";
 document.getElementById("holder").style.overflow = "hidden";
-document.getElementById("arrow").style.transform = "rotate(360deg)";
+document.getElementById("arrow").style.transform = "rotate(180deg)";
 document.getElementById("see-all").addEventListener("click", (e) => {
   let arrow = document.getElementById("arrow");
   let holder = document.getElementById("holder");
@@ -1083,13 +1079,13 @@ document.getElementById("see-all").addEventListener("click", (e) => {
       line[1].style.display = "block";
       document.getElementById("more").style.display = "flex";
       e.target.innerText = "See less";
-      arrow.style.transform = "rotate(-360deg)";
+      arrow.style.transform = "rotate(180deg)";
     }
   } else {
     moreee.style.display = "none";
     line[1].style.display = "none";
     e.target.innerText = "See all";
-    arrow.style.transform = "rotate(180deg)";
+    arrow.style.transform = "rotate(-360deg)";
   }
 });
 

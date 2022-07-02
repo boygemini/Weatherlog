@@ -896,11 +896,17 @@ header {
 
 
 
-
+/* #local-time span{
+    font-size: 12px;
+} */
 
 #hh .lt {
     color: whitesmoke;
     font-size: 20px;
+}
+
+#meridian{
+    font-size: 15px;
 }
 
 .meridian {
@@ -942,6 +948,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    column-gap: 5px;
     padding: 5px;
     font-weight: 500;
     color: #348581e4;

@@ -25,19 +25,19 @@
           <div class="menu" id="sidebar">
             <ul>
               <li>
-                <img src="./IMAGES/icons8-dashboard-layout-96.png" /><span id="menu-info">Dashboard</span>
+                <img src="./IMAGES/icons8-dashboard-layout-96.png" alt="menuIcon"/><span id="menu-info">Dashboard</span>
               </li>
               <li>
-                <img src="./IMAGES/icons8-map-grid-100.png" /><span id="menu-info">Map</span>
+                <img src="./IMAGES/icons8-map-grid-100.png" alt="menuIcon"/><span id="menu-info">Map</span>
               </li>
               <li>
-                <img src="./IMAGES/icons8-statistics-50.png" /><span id="menu-info">Statistics</span>
+                <img src="./IMAGES/icons8-statistics-50.png"alt="menuIcon" /><span id="menu-info">Statistics</span>
               </li>
               <li>
-                <img src="./IMAGES/icons8-calendar-50.png" /><span id="menu-info">Calender</span>
+                <img src="./IMAGES/icons8-calendar-50.png" alt="menuIcon"/><span id="menu-info">Calender</span>
               </li>
               <li>
-                <img src="./IMAGES/icons8-settings-50.png" /><span id="menu-info">Settings</span>
+                <img src="./IMAGES/icons8-settings-50.png" alt="menuIcon" /><span id="menu-info">Settings</span>
               </li>
             </ul>
 
@@ -68,11 +68,11 @@
           <span class="main-logo mn" id="big" id="mn">WEATHERLOG.</span>
         <div class="aright">
           <div class="alert">
-            <img src="./IMAGES/bell.png" />
+            <img src="./IMAGES/bell.png" alt="bell"/>
           </div>
           <div class="user-profile">
-            <img class="avatar" src="./IMAGES/user.png" />
-            <img class="arrow" src="./IMAGES/arrow-down-sign-to-navigate.png" />
+            <img class="avatar" src="./IMAGES/user.png" alt="avatar"/>
+            <img class="arrow" src="./IMAGES/arrow-down-sign-to-navigate.png" alt="arrow"/>
           </div>
         </div>
         </div>
@@ -80,7 +80,7 @@
           <div class="left" id="loadd">
             <div class="left-con" >
               <p class="lcp" id="lcp"><img  src="./IMAGES/icons8-user-location-64.png" width="30px" height="30px" id="userloc" alt="" srcset=""></p>
-              <input type="text" placeholder="Enter a city name" id="load" autocomplete="off" /><button id="GO" onclick="loadupWeather()">Go</button>
+              <input type="text" aria-autocomplete="none" autocomplete="off" placeholder="Enter a city name" id="load" autocomplete="off" /><button id="GO" onclick="loadupWeather()">Go</button>
             </div>
             <div id="result-box">
               <ul id="resul"></ul>
@@ -88,12 +88,12 @@
           </div>
           <div class="right">
             <div class="alert">
-              <img src="./IMAGES/bell.png" />
+              <img src="./IMAGES/bell.png" alt="bell"/>
             </div>
             <div class="user-profile">
-              <img class="avatar" src="./IMAGES/user.png" />
+              <img class="avatar" src="./IMAGES/user.png" alt="avatar"/>
               <p id="name" class="chai">Geminiboy</p>
-              <img class="arrow" src="./IMAGES/arrow-down-sign-to-navigate.png" />
+              <img class="arrow" src="./IMAGES/arrow-down-sign-to-navigate2.png" alt="arrow"/>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@
                     <button class="query" id="query">Amsterdam</button>
                   </div>
                   <div class="time-and-icons">
-                    <img class="sun" alt="" id="a-indicator">
+                    <img class="sun" alt="indicator" id="a-indicator">
                     <div class="f-time">
                       <h1 class="otime" id="amsterdam">12:21</h1>
                     </div>
@@ -130,7 +130,7 @@
                     <button class="query" id="query">London</button>
                   </div>
                   <div class="time-and-icons">
-                    <img class="sun" alt="" id="l-indicator">
+                    <img class="sun" alt="indicator" id="l-indicator">
                     <div class="f-time">
                       <h1 class="otime" id="london">12:21</h1>
                     </div>
@@ -148,7 +148,7 @@
                     <button class="query" id="query">Budapest</button>
                   </div>
                   <div class="time-and-icons">
-                    <img class="sun"  alt="" id="b-indicator">
+                    <img class="sun"  alt="indicator" id="b-indicator">
                     <div class="f-time">
                       <h1 class="otime" id="budapest">12:21</h1>
                     </div>
@@ -166,7 +166,7 @@
                     <button class="query" id="query">Paris</button>
                   </div>
                   <div class="time-and-icons">
-                    <img class="sun"  alt="" id="p-indicator">
+                    <img class="sun"  alt="indicator" id="p-indicator">
                     <div class="f-time">
                       <h1 class="otime" id="paris">12:21</h1>
                     </div>
@@ -184,7 +184,7 @@
                     <button class="query" id="query">Chicago</button>
                   </div>
                   <div class="time-and-icons">
-                    <img class="sun" alt="" id="c-indicator">
+                    <img class="sun" alt="indicator" id="c-indicator">
                     <div class="f-time">
                       <h1 class="otime" id="chicago">12:21</h1>
                     </div>
@@ -211,7 +211,7 @@
                   </div>
                 </div> -->
                 <div class="ttt">
-                  <img id="weather-icon" src="./IMAGES/icons8-sun-100.png" alt="">
+                  <img id="weather-icon" src="./IMAGES/partly-cloudy.png" alt="weatherIcon">
                   
                   <h1><span id="ft"></span> <span id="fts"><sup id="ftn">O</sup>C</span></h1>
                 </div>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="bb">
                   <h1 id="hh">
-                    <span class="lt" id="local-time">11:33</span>
+                    <span class="lt" id="local-time">11:33 </span>
                     <span class="meridian" id="meridian"></span>
                   </h1>
                   <p id="date">Mon, 11 January</p>
@@ -239,7 +239,7 @@
               <div class="top-cast">
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-sun-100.png" />
+                    <img src="./IMAGES/icons8-sun-100.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look" id="weather-look">Temperature</h1>
@@ -254,7 +254,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-rain-80.png" />
+                    <img src="./IMAGES/icons8-rain-80.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Rainfall</h1>
@@ -270,7 +270,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-humidity-96.png" />
+                    <img src="./IMAGES/icons8-humidity-96.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Humidity</h1>
@@ -286,7 +286,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-atmospheric-pressure-100.png" />
+                    <img src="./IMAGES/icons8-atmospheric-pressure-100.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Pressure</h1>
@@ -303,7 +303,7 @@
               <div class="top-cast">
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-sunrise-100.png" />
+                    <img src="./IMAGES/icons8-sunrise-100.png" alt="weatherIcon" />
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Sunrise</h1>
@@ -318,7 +318,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-wind-98.png" />
+                    <img src="./IMAGES/icons8-wind-98.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Wind</h1>
@@ -335,7 +335,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-eye-99.png" />
+                    <img src="./IMAGES/icons8-eye-99.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Visibility</h1>
@@ -351,7 +351,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-uv-index-64.png" />
+                    <img src="./IMAGES/icons8-uv-index-64.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">UV INDEX</h1>
@@ -367,7 +367,7 @@
               <div class="top-cast" id="more">
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-moonrise-80.png" />
+                    <img src="./IMAGES/icons8-moonrise-80.png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Moonrise</h1>
@@ -382,7 +382,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-snow-80.png "/>
+                    <img src="./IMAGES/icons8-snow-80.png " alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Snow</h1>
@@ -398,7 +398,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-wind-60(1).png" />
+                    <img src="./IMAGES/icons8-wind-60(1).png" alt="weatherIcon"/>
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Gust</h1>
@@ -415,7 +415,7 @@
                 </div>
                 <div class="main-forecast">
                   <div class="w-icon">
-                    <img src="./IMAGES/icons8-rain-gauge-100.png" />
+                    <img src="./IMAGES/icons8-rain-gauge-100.png" alt="weatherIcon" />
                   </div>
                   <div class="sunlight">
                     <h1 class="weather-look">Precipitation</h1>
@@ -423,16 +423,12 @@
                       <span id="precipitation" class="chai"></span>
                       <span class="unit" id="unit">mm</span>
                     </h1>
-                    <h2 class="feels-like"></h2>
-                    <br />
-                    <!-- <h2 class='fl-temp'><span id='wind-degree'></span> <sup>o</sup><span class='m2 meridian' id='wind-direction'></span></h2> -->
                   </div>
                 </div>
               </div>
               <p class="see-all">
                 <span id="see-all">See less</span>
-                <img id="arrow" class="arrow"
-                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAACUklEQVRoge2WMWgTURjH/98LyVAqFAvS6pIlF7HQsYvdBEVJ67vEUzu4OWi7dHOxm4ObFLRDB8HBKfYuKYVDoZI4OAjOaq7UQrPqIhJjufscgpKckaaXO/qQ95uOd+/7/t+Pu0seoBmMvHn1nlEyHyadk0qwN+WK8hGI7gOYPXkuP/H1xoKLWo0TCUui6ZRlZQ78n88AuhmKc4LWj4Ud123HnRm7yOm5uZHRTOoFGJf7bmBskx+YnzY3v8WZG6tIVsqxjOAtgM4fsvWdYLry0XG+xJUt4mo0ZVkTGYHaABIAMBOA3xhW4Uxc+bE8kbNSZn2BVwTkjli6l6LUxQ8bG96wMwz9RPKl+elA4G1YgoB6eG+ftazPfj1fmp8edo6hRAwpZ5jFawCTPTcIW99T6b8+dr/VvgSCHVqeZBZ1wzRnh5klsohxTV6AwDaA8e51Bj8/MX6q2CyXW+GaHddtN0T6OjOehm6NEfFLQ8r+v3QDEEkkZ5oFBHABjHavM2PVs6u33q+vH/yzuFz2PadymxmrPbXACASqOdMsRJkpkoggfgIgHRpkxXMqy53LQ2HPqSwzsBJaTxPx40gzRSliUPfRJgB4ybMrD47ap1PDS50ef4h0bIokElBwF8A+gF1mshp2dS1KHwBo2NU1ZrIA7ALYZ4g7Ufokctb6jVGUPa9Zw64klhfbP/txo0VUQ4uohhZRDS2iGlpENbSIamgR1dAiqqFFVEOLqIYWUQ0tohpaRDW0iGpoEdVIWmSv6/pzkkHJigRYBNAE0CSmxUSz/hd+AY+AqAgQQ8arAAAAAElFTkSuQmCC" />
+                <img class="arrow" id="arrow" src="./IMAGES/arrow-down-sign-to-navigate.png" alt="arrow"/>
               </p>
             </div>
           </div>
@@ -450,168 +446,168 @@
           <div class="carrier">
             <div class="h-forecast">
               <h1 class="chai">12 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">1 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">2 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">3 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">4 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">5 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">6 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">7 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">8 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">9 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">10 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">11 AM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">12 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">1 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">2 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">3 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">4 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">5 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">6 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">7 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">8 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">9 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">10 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
             </div>
             <div class="h-forecast">
               <h1 class="chai">11 PM</h1>
-              <img id="hourly-weather-condition" width="50px" height="50px" />
+              <img id="hourly-weather-condition" width="50px" height="50px" alt="weatherIcon" />
               <div class="range">
                 <h1 class="chai"><span id="hour-temp" class="chai"></span><sup class="chai"> o</sup>C</h1>
               </div>
@@ -635,10 +631,9 @@
   <footer>
     <h2>
       Made by
-      <a href="http://" target="_blank" rel="noopener noreferrer">Jubril Bolajoko</a>
+      <a href="https://twitter.com/jbolajoko05" target="_blank" rel="noopener noreferrer">Jubril Bolajoko</a>
     </h2>
   </footer>
-  <script src="/JAVASCRIPT/weather-app.js" defer></script>
   <script src="weather-app.js" defer></script>
 </body>
 
