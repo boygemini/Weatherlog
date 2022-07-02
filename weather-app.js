@@ -11,13 +11,29 @@ let currentTime = document.getElementById("today-time"),
 
 setInterval(() => {
   localTime = new Date();
-  currentTime.innerText = localTime.getHours() + ":" + localTime.getMinutes();
-  if (localTime.getHours() > 12) {
-    currentTime.innerText =
-      localTime.getHours() - 12 + ":" + localTime.getMinutes() + " PM";
-  } else if (localTime.getHours() < 12) {
-    localTime.getHours() + ":" + localTime.getMinutes() + " AM";
+  let curHr = localTime.getHours();
+  let curMin = localTime.getMinutes()
+  let minused = curHr - 12
+  if(localTime.getHours() < 10){
+    curHr = "0"+ curHr
   }
+  if(localTime.getMinutes() < 10){
+    curHr = "0"+ curMin
+  }
+  currentTime.innerText = curHr + ":" + curMin;
+  if (curHr > 12) {
+    currentTime.innerText =
+      minused + ":" + curMin + " PM";
+      if(minused < 10){
+        currentTime.innerText =
+        "0"+minused + ":" + curMin + " PM";
+      }
+  } else if (curHr < 12) {
+    curHr + ":" + curMin + " AM";
+  }
+
+  
+  
 
   currentDate.innerText = `${
     dayArr[localTime.getDay()]
@@ -81,15 +97,18 @@ function citiesTimeCollector(city, ID, indicator) {
     if (timereq.status === 200) {
       let timeCollect = JSON.parse(this.responseText);
       let cityTIme = timeCollect.location.localtime;
-      document.getElementById(ID).innerHTML = cityTIme.trim().slice(11);
-      let dayNight = cityTIme.trim().slice(11, 13);
-      console.log(dayNight);
+      let curDate = new Date(`${cityTIme.replace(/-/g, '/')}`)
+      let cityHr = curDate.getHours();
+      let cityMin = curDate.getMinutes();
       let isInDay = timeCollect.current.is_day;
-      if (dayNight < 10) {
-        document.getElementById(ID).innerHTML = "0" + cityTIme.trim().slice(11);
-      } else {
-        document.getElementById(ID).innerHTML = cityTIme.trim().slice(11);
+      
+      if (cityHr < 10) {
+        cityHr = "0" + cityHr;
+      } if(cityMin < 10) {
+        cityMin ="0" + cityMin;
       }
+
+      document.getElementById(ID).innerHTML = cityHr + ":" + cityMin;
 
       if (isInDay === 1) {
         document.getElementById(indicator).src = `./IMAGES/day2.png`;
@@ -169,7 +188,7 @@ let w_desc = document.getElementById(""),
   w_max_temp = document.querySelectorAll("#max-temp");
 
 let loader = document.getElementById("loader");
-loader.innerText = "Loading...";
+loader.innerText = "Loading data..";
 loader.style.opacity = "0";
 loader.style.backgroundColor = "#18214b";
 loader.style.display = "none";
@@ -266,7 +285,7 @@ const loadupWeather = (city_selected) => {
           gustinmiles = result.current.gust_mph,
           precipitation = result.current.precip_mm,
           uv = result.current.uv,
-          current_date = new Date(`${result.location.localtime}`),
+          current_date = new Date(`${result.location.localtime.replace(/-/g, '/')}`),
           meridian = current_date.getHours(),
           isDay = result.current.is_day,
           otherTime = result.current.localtime_epoch;
@@ -560,7 +579,17 @@ const loadupWeather = (city_selected) => {
         w_visi_miles.innerText = visibility_m;
         w_city.innerText = city_name;
         w_country.innerText = country_name;
-        w_time.innerText = local_time.trim().slice(11);
+        
+        let currentHr = current_date.getHours();
+        let currentMin = current_date.getMinutes();
+        if(currentHr < 10){
+          currentHr = "0" + currentHr
+        }
+
+        if(currentMin < 10){
+          currentMin = "0" + currentMin
+        }
+        w_time.innerText = currentHr +":" + currentMin;
         w_rain.innerText = rainfall;
         w_uv.innerText = uv;
         w_date.innerText =
@@ -1012,7 +1041,7 @@ document.getElementById("load").addEventListener("keydown", (e) => {
   if (event.key === "Enter") {
     let loader2 = document.getElementById("loader");
     loader2.style.display = "flex";
-    loader2.innerText = "Loading...";
+    loader2.innerText = "Loading data..";
     loader2.style.opacity = "1";
     loader2.style.backgroundColor = "#18214b";
     loadupWeather();
@@ -1136,7 +1165,7 @@ document.getElementById("load").addEventListener("input", (e) => {
           ) {
             let ll = document.getElementById("loader");
             ll.style.display = "flex";
-            ll.innerText = "Loading...";
+            ll.innerText = "Loading data..";
             ll.style.opacity = "1";
             ll.style.backgroundColor = "#18214b";
             loadupWeather(event.target.innerText);
