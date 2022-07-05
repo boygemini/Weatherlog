@@ -506,8 +506,6 @@ const loadupWeather = (city_selected) => {
           console.log(error.message);
         }
 
-        // let hourlyWeatherConditionData = result.forecast.forecastday[0].hour[2].condition.text;
-
         let weatherIcon = document.getElementById("weather-icon");
 
         if (desc_cloud == weatherCondition[0]) {
@@ -1731,14 +1729,6 @@ function change(
   } catch (error) {
     console.log(error.message);
   }
-
-  // try {
-  //   for(let lk = 0; lk <= asteric.length; lk++){
-  //     asteric[lk].style.color = "#ffffffc0"
-  //   }
-  // } catch (error) {
-  //     console.log(error.message);
-  // }
 
   try {
     for (let jkp = 0; jkp <= 50; jkp++) {
