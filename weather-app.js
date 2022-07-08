@@ -14,26 +14,26 @@ setInterval(() => {
   let curHr = localTime.getHours();
   let curMin = localTime.getMinutes()
   let minused = curHr - 12
-  if(localTime.getHours() < 10){
-    curHr = "0"+ curHr
+  if (localTime.getHours() < 10) {
+    curHr = "0" + curHr
   }
-  if(localTime.getMinutes() < 10){
-    curHr = "0"+ curMin
-  }
+  if (localTime.getMinutes() < 10) {
+    curHr = "0" + curMin
+  } 
   currentTime.innerText = curHr + ":" + curMin;
   if (curHr > 12) {
     currentTime.innerText =
       minused + ":" + curMin + " PM";
-      if(minused < 10){
-        currentTime.innerText =
-        "0"+minused + ":" + curMin + " PM";
-      }
+    if (minused < 10) {
+      currentTime.innerText =
+        "0" + minused + ":" + curMin + " PM";
+    }
   } else if (curHr < 12) {
     curHr + ":" + curMin + " AM";
   }
 
-  
-  
+
+
 
   currentDate.innerText = `${
     dayArr[localTime.getDay()]
@@ -101,11 +101,12 @@ function citiesTimeCollector(city, ID, indicator) {
       let cityHr = curDate.getHours();
       let cityMin = curDate.getMinutes();
       let isInDay = timeCollect.current.is_day;
-      
+
       if (cityHr < 10) {
         cityHr = "0" + cityHr;
-      } if(cityMin < 10) {
-        cityMin ="0" + cityMin;
+      }
+      if (cityMin < 10) {
+        cityMin = "0" + cityMin;
       }
 
       document.getElementById(ID).innerHTML = cityHr + ":" + cityMin;
@@ -305,7 +306,7 @@ const loadupWeather = (city_selected) => {
         }
 
         if (isDay === 1) {
-          change("", "", "", "", "", "", "","","");
+          change("", "", "", "", "", "", "", "", "");
         }
 
         if (meridian < 12) {
@@ -506,6 +507,8 @@ const loadupWeather = (city_selected) => {
           console.log(error.message);
         }
 
+        // let hourlyWeatherConditionData = result.forecast.forecastday[0].hour[2].condition.text;
+
         let weatherIcon = document.getElementById("weather-icon");
 
         if (desc_cloud == weatherCondition[0]) {
@@ -577,17 +580,17 @@ const loadupWeather = (city_selected) => {
         w_visi_miles.innerText = visibility_m;
         w_city.innerText = city_name;
         w_country.innerText = country_name;
-        
+
         let currentHr = current_date.getHours();
         let currentMin = current_date.getMinutes();
-        if(currentHr < 10){
+        if (currentHr < 10) {
           currentHr = "0" + currentHr
         }
 
-        if(currentMin < 10){
+        if (currentMin < 10) {
           currentMin = "0" + currentMin
         }
-        w_time.innerText = currentHr +":" + currentMin;
+        w_time.innerText = currentHr + ":" + currentMin;
         w_rain.innerText = rainfall;
         w_uv.innerText = uv;
         w_date.innerText =
@@ -621,7 +624,7 @@ const loadupWeather = (city_selected) => {
 
     const dayForcast = (city_selected) => {
       const api_Url = "https://api.weatherbit.io/v2.0/forecast/daily?city=";
-      const api_Key = "027bdb6bf05e4ae2ae32d83af1a4d462";
+      const api_Key = "ff7071bcc34042a8a377e3147c070804";
       const xhr = new XMLHttpRequest();
       xhr.open(
         "GET",
@@ -1729,6 +1732,14 @@ function change(
   } catch (error) {
     console.log(error.message);
   }
+
+  // try {
+  //   for(let lk = 0; lk <= asteric.length; lk++){
+  //     asteric[lk].style.color = "#ffffffc0"
+  //   }
+  // } catch (error) {
+  //     console.log(error.message);
+  // }
 
   try {
     for (let jkp = 0; jkp <= 50; jkp++) {
